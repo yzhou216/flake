@@ -3,22 +3,25 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    #nixos-hardware.url = "nixos-hardware";
+    nixos-hardware.url = "nixos-hardware";
   };
 
-  outputs = { self, nixpkgs } @ inputs :{
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-hardware,
+  } @ inputs: {
     nixosConfigurations = {
-       sys76 = nixpkgs.lib.nixosSystem {
-       system = "x86_64-linux";
+      sys76 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = {inherit inputs;};
-        modules =  [
-	#.sys/BASE.nix
-	.sys/hardware-configuration.nix
-	.sys/configuration.nix
-	];
-        };
-       
+        modules = [
+          nixos-hardware.nixosModules.system76
+          #.sys/BASE.nix
+          ./sys/hardware-configuration.nix
+          ./sys/configuration.nix
+        ];
+      };
     };
-
   };
 }
