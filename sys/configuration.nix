@@ -148,6 +148,8 @@
     };
   };
 
+  services.tailscale.enable = true;
+
   programs.river.enable = true;
 
   # Open ports in the firewall.
