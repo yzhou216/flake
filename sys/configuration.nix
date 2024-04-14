@@ -147,7 +147,11 @@
       ids = ["*"];
       settings = {
         main = {
-          capslock = "leftcontrol";
+          capslock = "layer(nav)";
+          rightcontrol = "rightmeta";
+        };
+        "nav:C" = {
+          "[" = "esc";
         };
       };
     };
