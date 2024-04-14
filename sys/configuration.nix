@@ -76,6 +76,8 @@
     #media-session.enable = true;
   };
 
+  security.doas.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
