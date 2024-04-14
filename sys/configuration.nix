@@ -122,6 +122,7 @@
     nil
     alejandra
 
+    python3
     temurin-bin-17
 
     yambar
