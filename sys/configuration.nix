@@ -121,6 +121,9 @@
 
     temurin-bin-17
 
+    yambar
+    wofi
+
     digital
     signal-desktop
   ];
