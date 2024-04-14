@@ -76,7 +76,9 @@
     #media-session.enable = true;
   };
 
+  # Use doas instead of sudo
   security.doas.enable = true;
+  security.sudo.enable = false;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
