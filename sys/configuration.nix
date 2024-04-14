@@ -122,6 +122,7 @@
     nil
     alejandra
 
+    rustup
     python3
     temurin-bin-17
 
