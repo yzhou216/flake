@@ -111,6 +111,9 @@
     vim
     neovim
 
+    universal-ctags
+    cscope
+
     tmux
     wget
     stow
