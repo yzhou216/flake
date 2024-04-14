@@ -110,6 +110,7 @@
     tmux
     wget
     stow
+    unzip
 
     nil
     alejandra
