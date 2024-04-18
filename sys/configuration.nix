@@ -97,7 +97,7 @@
   users.users.yiyu = {
     isNormalUser = true;
     description = "Yiyu Zhou";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "video"];
     packages = with pkgs; [
       firefox
       #  thunderbird
@@ -139,6 +139,7 @@
 
     yambar
     wofi
+    light
 
     digital
     signal-desktop
