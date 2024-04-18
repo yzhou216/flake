@@ -97,7 +97,7 @@
   users.users.yiyu = {
     isNormalUser = true;
     description = "Yiyu Zhou";
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = ["wheel" "video" "networkmanager"];
     packages = with pkgs; [
       firefox
       #  thunderbird
