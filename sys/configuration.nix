@@ -138,6 +138,7 @@
 
     yambar
     wofi
+    fnott
 
     digital
     signal-desktop
