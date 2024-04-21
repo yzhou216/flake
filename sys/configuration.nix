@@ -144,6 +144,10 @@
     signal-desktop
   ];
 
+  programs.river.enable = true;
+  programs.kdeconnect.enable = true;
+  programs.steam.enable = true;
+
   hardware.acpilight.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -159,6 +163,7 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.tailscale.enable = true;
   services.keyd = {
     enable = true;
     keyboards.default = {
@@ -174,9 +179,6 @@
       };
     };
   };
-
-  services.tailscale.enable = true;
-  programs.kdeconnect.enable = true;
 
   # Remove new line character from default prompt PS1
   programs.bash.promptInit = ''
@@ -194,10 +196,6 @@
       fi
     fi
   '';
-
-  programs.river.enable = true;
-
-  programs.steam.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
