@@ -176,6 +176,7 @@
   };
 
   services.tailscale.enable = true;
+  programs.kdeconnect.enable = true;
 
   # Remove new line character from default prompt PS1
   programs.bash.promptInit = ''
