@@ -137,6 +137,7 @@
 
     digital
     signal-desktop
+    libreoffice
   ];
 
   programs.river.enable = true;
