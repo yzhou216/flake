@@ -108,6 +108,7 @@
     gdb
     gnumake
     cmake
+    libtool
     git
 
     emacs
