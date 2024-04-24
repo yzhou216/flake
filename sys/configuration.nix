@@ -135,6 +135,7 @@
     wofi
     fnott
     wayshot
+    slurp
 
     alacritty
     digital
