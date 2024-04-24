@@ -134,6 +134,7 @@
     yambar
     wofi
     fnott
+    wayshot
 
     alacritty
     digital
