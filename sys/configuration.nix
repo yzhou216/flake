@@ -136,6 +136,7 @@
     fnott
     wayshot
     slurp
+    wl-clipboard-rs
 
     alacritty
     digital
