@@ -108,6 +108,7 @@
     git
 
     gnumake
+    cmake
     gcc
     gdb
 
