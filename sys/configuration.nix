@@ -12,7 +12,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "sys76";
+  networking.hostName = "galago";
 
   # Network proxy
   # networking.proxy.default = "http://user:password@proxy:port/";
