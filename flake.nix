@@ -12,7 +12,7 @@
     nixos-hardware,
   } @ inputs: {
     nixosConfigurations = {
-      sys76 = nixpkgs.lib.nixosSystem {
+      galago = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
