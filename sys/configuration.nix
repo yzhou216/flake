@@ -131,6 +131,7 @@
     python311Packages.pip
     temurin-bin-17
 
+    kanshi
     yambar
     wofi
     fnott
@@ -142,7 +143,6 @@
     digital
     libreoffice
     signal-desktop
-    kanshi
   ];
 
   programs.river.enable = true;
