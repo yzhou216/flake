@@ -142,6 +142,7 @@
     digital
     libreoffice
     signal-desktop
+    kanshi
   ];
 
   programs.river.enable = true;
