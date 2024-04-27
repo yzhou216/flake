@@ -133,6 +133,7 @@
   ];
 
   programs.river.enable = true;
+  programs.sway.enable = true; # backup for river
   programs.kdeconnect.enable = true;
   programs.steam.enable = true;
 
