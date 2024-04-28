@@ -151,6 +151,7 @@
   services.openssh.enable = true;
 
   services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "client";
   services.keyd = {
     enable = true;
     keyboards.default = {
