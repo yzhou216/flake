@@ -119,6 +119,7 @@
     rustup
     python3
     python311Packages.pip
+    python311Packages.python-lsp-server
     temurin-bin-17
 
     kanshi
