@@ -122,6 +122,7 @@
     python311Packages.python-lsp-server
     temurin-bin-17
 
+    river
     kanshi
     yambar
     wofi
@@ -137,7 +138,6 @@
     signal-desktop
   ];
 
-  programs.river.enable = true;
   programs.sway.enable = true; # backup for river
   programs.kdeconnect.enable = true;
   programs.steam.enable = true;
