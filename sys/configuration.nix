@@ -129,6 +129,7 @@
     wayshot
     slurp
     wl-clipboard-rs
+    swayidle
 
     alacritty
     digital
