@@ -131,6 +131,8 @@
     slurp
     wl-clipboard-rs
     swayidle
+    qt5ct
+    qt6ct
 
     alacritty
     digital
