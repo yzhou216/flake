@@ -84,7 +84,7 @@
     extraGroups = ["wheel" "video" "networkmanager"];
     packages = with pkgs; [
       firefox
-      #  thunderbird
+      thunderbird
     ];
   };
 
