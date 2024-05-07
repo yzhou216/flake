@@ -123,6 +123,7 @@
     temurin-bin-17
 
     river
+    pamixer
     kanshi
     yambar
     wofi
