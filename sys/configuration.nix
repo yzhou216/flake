@@ -132,6 +132,10 @@
     slurp
     wl-clipboard-rs
     swayidle
+
+    # Theming
+    gnome.adwaita-icon-theme
+    gnome.gnome-themes-extra
     qt5ct
     qt6ct
 
