@@ -143,6 +143,7 @@
     digital
     libreoffice
     signal-desktop
+    gurk-rs
   ];
 
   programs.sway.enable = true; # backup for river
