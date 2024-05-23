@@ -99,6 +99,7 @@
     gnumake
     cmake
     libtool
+    readline
     git
 
     emacs
