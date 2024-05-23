@@ -117,6 +117,7 @@
     alejandra
 
     rustup
+    guile
     python3
     python311Packages.pip
     python311Packages.python-lsp-server
