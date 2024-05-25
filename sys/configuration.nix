@@ -118,6 +118,9 @@
     alejandra
 
     rustup
+    go
+    gopls
+    delve
     guile
     python3
     python311Packages.pip
