@@ -149,6 +149,7 @@
     libreoffice
     signal-desktop
     gurk-rs
+    lutris
   ];
 
   programs.sway.enable = true; # backup for river
