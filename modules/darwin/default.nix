@@ -45,6 +45,7 @@
     NSGlobalDomain.KeyRepeat = 1;
     NSGlobalDomain."com.apple.swipescrolldirection" = false; # Disable natural scrolling
     NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
+    NSGlobalDomain.NSDisableAutomaticTermination = true;
 
     dock.autohide = true;
 
