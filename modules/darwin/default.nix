@@ -55,7 +55,6 @@
     casks = [
       "firefox"
       "libreoffice"
-      "raycast"
       "quicksilver"
       "amethyst"
       "scroll-reverser"
