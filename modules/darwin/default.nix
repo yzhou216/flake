@@ -7,6 +7,7 @@
   networking.hostName = "m1";
 
   programs.zsh.enable = true;
+  programs.vim.enable = true;
 
   environment = {
     shells = with pkgs; [bash zsh];
