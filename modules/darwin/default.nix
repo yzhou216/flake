@@ -55,6 +55,7 @@
     masApps = {};
     casks = [
       "firefox"
+      "thunderbird"
       "libreoffice"
       "quicksilver"
       "amethyst"
