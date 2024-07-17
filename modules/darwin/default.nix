@@ -48,7 +48,15 @@
     NSGlobalDomain.NSDisableAutomaticTermination = true;
     NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
 
-    dock.autohide = true;
+    dock = {
+      autohide = true;
+      show-recents = false;
+      orientation = "right";
+      wvous-bl-corner = 1;
+      wvous-br-corner = 1;
+      wvous-tl-corner = 1;
+      wvous-tr-corner = 1;
+    };
 
     #TODO
     #".GlobalPreferences"."com.apple.mouse.scaling" = 5.0;
