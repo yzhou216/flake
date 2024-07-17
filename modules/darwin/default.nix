@@ -113,6 +113,7 @@
       "amethyst"
       "scroll-reverser"
       "signal"
+      "steam"
     ];
     taps = ["fujiapple852/trippy"];
     brews = ["trippy"];
