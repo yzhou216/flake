@@ -49,7 +49,12 @@
     caskArgs.no_quarantine = true;
     global.brewfile = true;
     masApps = {};
-    casks = ["firefox" "raycast" "amethyst"];
+    casks = [
+      "firefox"
+      "libreoffice"
+      "raycast"
+      "amethyst"
+    ];
     taps = ["fujiapple852/trippy"];
     brews = ["trippy"];
   };
