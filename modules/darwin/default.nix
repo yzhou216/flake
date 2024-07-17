@@ -54,6 +54,7 @@
       "libreoffice"
       "raycast"
       "amethyst"
+      "signal"
     ];
     taps = ["fujiapple852/trippy"];
     brews = ["trippy"];
