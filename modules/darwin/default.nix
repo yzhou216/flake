@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   # Darwin preferences and config items
+  networking.hostName = "m1";
   programs.zsh.enable = true;
   services.tailscale.enable = true;
   environment = {
