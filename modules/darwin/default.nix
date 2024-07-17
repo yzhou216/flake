@@ -14,6 +14,7 @@
 
     systemPackages = with pkgs; [
       coreutils
+      git
       stow
       alacritty
       neovim
