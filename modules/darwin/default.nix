@@ -1,13 +1,13 @@
+# Darwin preferences and config items
 {pkgs, ...}: {
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
 
-  # Darwin preferences and config items
   networking.hostName = "m1";
+
   programs.zsh.enable = true;
-  services.tailscale.enable = true;
-  services.karabiner-elements.enable = true;
+
   environment = {
     shells = with pkgs; [bash zsh];
     loginShell = pkgs.zsh;
@@ -24,29 +24,42 @@
     pathsToLink = ["/Applications"];
   };
 
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToControl = true;
+  services = {
+    nix-daemon.enable = true;
+    tailscale.enable = true;
+    karabiner-elements.enable = true;
+  };
 
   fonts.fontDir.enable = true; # DANGER
   fonts.fonts = [(pkgs.nerdfonts.override {fonts = ["Meslo"];})];
-  services.nix-daemon.enable = true;
-  system.defaults = {
-    finder._FXShowPosixPathInTitle = true;
-    finder.AppleShowAllExtensions = true;
-    finder.ShowStatusBar = true;
-    finder.ShowPathbar = false;
-    finder.CreateDesktop = false;
-    finder.QuitMenuItem = true;
 
-    NSGlobalDomain.AppleShowAllExtensions = true;
-    NSGlobalDomain.AppleInterfaceStyle = "Dark"; # dark mode
-    NSGlobalDomain._HIHideMenuBar = true;
-    NSGlobalDomain.InitialKeyRepeat = 14;
-    NSGlobalDomain.KeyRepeat = 1;
-    NSGlobalDomain."com.apple.swipescrolldirection" = false; # Disable natural scrolling
-    NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
-    NSGlobalDomain.NSDisableAutomaticTermination = true;
-    NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
+  # backwards compat; **DO NOT CHANGE!!**
+  system.stateVersion = 4;
+
+  system.keyboard.enableKeyMapping = true;
+  system.keyboard.remapCapsLockToControl = true;
+
+  system.defaults = {
+    NSGlobalDomain = {
+      AppleShowAllExtensions = true;
+      AppleInterfaceStyle = "Dark"; # dark mode
+      _HIHideMenuBar = true;
+      InitialKeyRepeat = 14;
+      KeyRepeat = 1;
+      "com.apple.swipescrolldirection" = false; # Disable natural scrolling
+      NSAutomaticWindowAnimationsEnabled = false;
+      NSDisableAutomaticTermination = true;
+      NSDocumentSaveNewDocumentsToCloud = false;
+    };
+
+    finder = {
+      _FXShowPosixPathInTitle = true;
+      AppleShowAllExtensions = true;
+      ShowStatusBar = true;
+      ShowPathbar = false;
+      CreateDesktop = false;
+      QuitMenuItem = true;
+    };
 
     dock = {
       autohide = true;
@@ -61,9 +74,6 @@
     #TODO
     #".GlobalPreferences"."com.apple.mouse.scaling" = 5.0;
   };
-
-  # backwards compat; **DO NOT CHANGE!!**
-  system.stateVersion = 4;
 
   homebrew = {
     enable = true;
