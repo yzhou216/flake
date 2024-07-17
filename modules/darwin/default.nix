@@ -46,6 +46,7 @@
     NSGlobalDomain."com.apple.swipescrolldirection" = false; # Disable natural scrolling
     NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
     NSGlobalDomain.NSDisableAutomaticTermination = true;
+    NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
 
     dock.autohide = true;
 
