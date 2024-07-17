@@ -37,6 +37,7 @@
     NSGlobalDomain._HIHideMenuBar = true;
     NSGlobalDomain.InitialKeyRepeat = 14;
     NSGlobalDomain.KeyRepeat = 1;
+    NSGlobalDomain."com.apple.swipescrolldirection" = false; # Disable natural scrolling
     dock.autohide = true;
 
     #TODO
