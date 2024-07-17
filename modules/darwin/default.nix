@@ -33,6 +33,11 @@
   system.defaults = {
     finder._FXShowPosixPathInTitle = true;
     finder.AppleShowAllExtensions = true;
+    finder.ShowStatusBar = true;
+    finder.ShowPathbar = false;
+    finder.CreateDesktop = false;
+    finder.QuitMenuItem = true;
+
     NSGlobalDomain.AppleShowAllExtensions = true;
     NSGlobalDomain.AppleInterfaceStyle = "Dark"; # dark mode
     NSGlobalDomain._HIHideMenuBar = true;
