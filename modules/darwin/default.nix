@@ -57,6 +57,7 @@
       "libreoffice"
       "raycast"
       "amethyst"
+      "scroll-reverser"
       "signal"
     ];
     taps = ["fujiapple852/trippy"];
