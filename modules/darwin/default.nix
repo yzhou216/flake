@@ -3,6 +3,7 @@
   networking.hostName = "m1";
   programs.zsh.enable = true;
   services.tailscale.enable = true;
+  services.karabiner-elements.enable = true;
   environment = {
     shells = with pkgs; [bash zsh];
     loginShell = pkgs.zsh;
