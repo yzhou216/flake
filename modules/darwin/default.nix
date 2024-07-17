@@ -32,6 +32,7 @@
     finder.AppleShowAllExtensions = true;
     NSGlobalDomain.AppleShowAllExtensions = true;
     NSGlobalDomain.AppleInterfaceStyle = "Dark"; # dark mode
+    NSGlobalDomain._HIHideMenuBar = true;
     NSGlobalDomain.InitialKeyRepeat = 14;
     NSGlobalDomain.KeyRepeat = 1;
     dock.autohide = true;
