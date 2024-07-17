@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   # Darwin preferences and config items
   networking.hostName = "m1";
   programs.zsh.enable = true;
@@ -19,9 +23,7 @@
     systemPath = ["/opt/homebrew/bin"];
     pathsToLink = ["/Applications"];
   };
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
+
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
 
