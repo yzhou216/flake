@@ -68,6 +68,7 @@
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
       AppleInterfaceStyle = "Dark"; # dark mode
+      AppleInterfaceStyleSwitchesAutomatically = false;
       _HIHideMenuBar = true;
       InitialKeyRepeat = 14;
       KeyRepeat = 1;
