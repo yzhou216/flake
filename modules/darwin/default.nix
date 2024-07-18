@@ -50,6 +50,8 @@
   services = {
     nix-daemon.enable = true;
     tailscale.enable = true;
+    yabai.enable = true;
+    yabai.enableScriptingAddition = true;
     karabiner-elements.enable = true;
   };
 
@@ -115,7 +117,7 @@
       "thunderbird"
       "libreoffice"
       "quicksilver"
-      "amethyst"
+      "amethyst" # TODO: remove! migrating to yabai
       "scroll-reverser"
       "signal"
       "steam"
