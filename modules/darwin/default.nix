@@ -77,6 +77,8 @@
       NSDocumentSaveNewDocumentsToCloud = false;
     };
 
+    LaunchServices.LSQuarantine = false;
+
     finder = {
       _FXShowPosixPathInTitle = true;
       AppleShowAllExtensions = true;
