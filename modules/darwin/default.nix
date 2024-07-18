@@ -51,9 +51,6 @@
     karabiner-elements.enable = true;
   };
 
-  fonts.fontDir.enable = true; # DANGER
-  fonts.fonts = [(pkgs.nerdfonts.override {fonts = ["Meslo"];})];
-
   # backwards compat; **DO NOT CHANGE!!**
   system.stateVersion = 4;
 
