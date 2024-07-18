@@ -28,13 +28,10 @@
         fi
       '';
     };
-    zsh.enable = true;
   };
 
   environment = {
-    shells = with pkgs; [bash zsh];
-    loginShell = pkgs.zsh;
-
+    shells = with pkgs; [bash];
     systemPackages = with pkgs; [
       coreutils
       git
