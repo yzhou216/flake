@@ -28,6 +28,7 @@
         fi
       '';
     };
+    tmux.enable = true;
   };
 
   environment = {
