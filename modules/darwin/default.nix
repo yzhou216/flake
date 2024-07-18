@@ -56,6 +56,8 @@
   # backwards compat; **DO NOT CHANGE!!**
   system.stateVersion = 4;
 
+  system.startup.chime = false;
+
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
 
