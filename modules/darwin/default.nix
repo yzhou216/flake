@@ -29,7 +29,6 @@
       '';
     };
     zsh.enable = true;
-    vim.enable = true;
   };
 
   environment = {
