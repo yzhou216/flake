@@ -53,53 +53,55 @@
     karabiner-elements.enable = true;
   };
 
-  # backwards compat; **DO NOT CHANGE!!**
-  system.stateVersion = 4;
+  system = {
+    # backwards compat; **DO NOT CHANGE!!**
+    stateVersion = 4;
 
-  system.startup.chime = false;
+    startup.chime = false;
 
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToControl = true;
+    keyboard.enableKeyMapping = true;
+    keyboard.remapCapsLockToControl = true;
 
-  system.defaults = {
-    NSGlobalDomain = {
-      AppleShowAllExtensions = true;
-      AppleInterfaceStyle = "Dark"; # dark mode
-      AppleInterfaceStyleSwitchesAutomatically = false;
-      _HIHideMenuBar = true;
-      InitialKeyRepeat = 14;
-      KeyRepeat = 1;
-      "com.apple.swipescrolldirection" = false; # Disable natural scrolling
-      NSAutomaticWindowAnimationsEnabled = false;
-      NSDisableAutomaticTermination = true;
-      NSDocumentSaveNewDocumentsToCloud = false;
+    defaults = {
+      NSGlobalDomain = {
+        AppleShowAllExtensions = true;
+        AppleInterfaceStyle = "Dark"; # dark mode
+        AppleInterfaceStyleSwitchesAutomatically = false;
+        _HIHideMenuBar = true;
+        InitialKeyRepeat = 14;
+        KeyRepeat = 1;
+        "com.apple.swipescrolldirection" = false; # Disable natural scrolling
+        NSAutomaticWindowAnimationsEnabled = false;
+        NSDisableAutomaticTermination = true;
+        NSDocumentSaveNewDocumentsToCloud = false;
+      };
+
+      loginwindow.SHOWFULLNAME = true; # Remove name on login screen
+
+      LaunchServices.LSQuarantine = false;
+
+      finder = {
+        _FXShowPosixPathInTitle = true;
+        AppleShowAllExtensions = true;
+        ShowStatusBar = true;
+        ShowPathbar = false;
+        CreateDesktop = false;
+        QuitMenuItem = true;
+      };
+
+      dock = {
+        autohide = true;
+        show-recents = false;
+        orientation = "right";
+        wvous-bl-corner = 1;
+        wvous-br-corner = 1;
+        wvous-tl-corner = 1;
+        wvous-tr-corner = 1;
+      };
+
+      #TODO
+      #".GlobalPreferences"."com.apple.mouse.scaling" = 5.0;
     };
-
-    loginwindow.SHOWFULLNAME = true; # Remove name on login screen
-
-    LaunchServices.LSQuarantine = false;
-
-    finder = {
-      _FXShowPosixPathInTitle = true;
-      AppleShowAllExtensions = true;
-      ShowStatusBar = true;
-      ShowPathbar = false;
-      CreateDesktop = false;
-      QuitMenuItem = true;
-    };
-
-    dock = {
-      autohide = true;
-      show-recents = false;
-      orientation = "right";
-      wvous-bl-corner = 1;
-      wvous-br-corner = 1;
-      wvous-tl-corner = 1;
-      wvous-tr-corner = 1;
-    };
-
-    #TODO
-    #".GlobalPreferences"."com.apple.mouse.scaling" = 5.0;
   };
 
   homebrew = {
