@@ -78,6 +78,8 @@
       NSDocumentSaveNewDocumentsToCloud = false;
     };
 
+    loginwindow.SHOWFULLNAME = true; # Remove name on login screen
+
     LaunchServices.LSQuarantine = false;
 
     finder = {
