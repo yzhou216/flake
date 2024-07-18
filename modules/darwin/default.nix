@@ -71,6 +71,7 @@
         InitialKeyRepeat = 14;
         KeyRepeat = 1;
         "com.apple.swipescrolldirection" = false; # Disable natural scrolling
+        "com.apple.trackpad.forceClick" = false;
         NSAutomaticWindowAnimationsEnabled = false;
         NSDisableAutomaticTermination = true;
         NSDocumentSaveNewDocumentsToCloud = false;
