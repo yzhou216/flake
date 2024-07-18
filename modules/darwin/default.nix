@@ -35,6 +35,7 @@
     shells = with pkgs; [bash];
     systemPackages = with pkgs; [
       coreutils
+      gnumake
       git
       stow
       alacritty
