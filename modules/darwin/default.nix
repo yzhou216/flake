@@ -114,7 +114,9 @@
       "signal"
       "steam"
     ];
-    taps = ["fujiapple852/trippy"];
-    brews = ["trippy"];
+
+    # TODO: broken! migrate taps to using nix-homebrew
+    # taps = ["fujiapple852/trippy"];
+    # brews = ["trippy"];
   };
 }
