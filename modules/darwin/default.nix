@@ -67,6 +67,11 @@
     keyboard.remapCapsLockToControl = true;
 
     defaults = {
+      universalaccess = {
+        reduceMotion = true;
+        reduceTransparency = true;
+      };
+
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         AppleInterfaceStyle = "Dark"; # dark mode
