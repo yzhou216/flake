@@ -98,6 +98,7 @@
         autohide = true;
         static-only = true; # Show running programs only
         show-process-indicators = false;
+        launchanim = false;
         orientation = "right";
         wvous-bl-corner = 1;
         wvous-br-corner = 1;
