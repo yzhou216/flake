@@ -52,6 +52,7 @@
     tailscale.enable = true;
     yabai.enable = true;
     yabai.enableScriptingAddition = true;
+    sketchybar.enable = true;
     karabiner-elements.enable = true;
   };
 
