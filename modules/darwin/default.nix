@@ -119,7 +119,6 @@
       "thunderbird"
       "libreoffice"
       "quicksilver"
-      "amethyst" # TODO: remove! migrating to yabai
       "scroll-reverser"
       "signal"
       "steam"
