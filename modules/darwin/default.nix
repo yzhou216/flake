@@ -96,7 +96,7 @@
 
       dock = {
         autohide = true;
-        show-recents = false;
+        static-only = true; # Show running programs only
         orientation = "right";
         wvous-bl-corner = 1;
         wvous-br-corner = 1;
