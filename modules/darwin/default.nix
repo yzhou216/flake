@@ -91,6 +91,8 @@
         NSAutomaticWindowAnimationsEnabled = false;
         NSDisableAutomaticTermination = true;
         NSDocumentSaveNewDocumentsToCloud = false;
+        NSNavPanelExpandedStateForSaveMode = true;
+        NSNavPanelExpandedStateForSaveMode2 = true;
         NSUseAnimatedFocusRing = false;
       };
 
