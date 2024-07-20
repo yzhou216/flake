@@ -83,6 +83,11 @@
         KeyRepeat = 1;
         "com.apple.swipescrolldirection" = false; # Disable natural scrolling
         "com.apple.trackpad.forceClick" = false;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticQuoteSubstitutionEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticWindowAnimationsEnabled = false;
         NSDisableAutomaticTermination = true;
         NSDocumentSaveNewDocumentsToCloud = false;
