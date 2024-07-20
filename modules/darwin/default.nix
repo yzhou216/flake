@@ -86,6 +86,7 @@
         NSAutomaticWindowAnimationsEnabled = false;
         NSDisableAutomaticTermination = true;
         NSDocumentSaveNewDocumentsToCloud = false;
+        NSUseAnimatedFocusRing = false;
       };
 
       loginwindow.SHOWFULLNAME = true; # Remove name on login screen
