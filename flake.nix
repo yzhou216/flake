@@ -36,29 +36,31 @@
     homebrew-cask,
     ...
   }: {
-    darwinConfigurations.m1 = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      pkgs = import nixpkgs {system = "aarch64-darwin";};
-      modules = [
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            enable = true;
-            enableRosetta = true;
-            user = "iris";
-            taps = {
-              "homebrew/homebrew-core" = inputs.homebrew-core;
-              "homebrew/homebrew-cask" = inputs.homebrew-cask;
-              "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
-            };
+    darwinConfigurations = {
+      m1 = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        pkgs = import nixpkgs {system = "aarch64-darwin";};
+        modules = [
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              enableRosetta = true;
+              user = "iris";
+              taps = {
+                "homebrew/homebrew-core" = inputs.homebrew-core;
+                "homebrew/homebrew-cask" = inputs.homebrew-cask;
+                "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+              };
 
-            # Enable fully-declarative tap management
-            # Taps can no longer be added imperatively with `brew tap`
-            mutableTaps = false;
-          };
-        }
-        ./modules/darwin
-      ];
+              # Enable fully-declarative tap management
+              # Taps can no longer be added imperatively with `brew tap`
+              mutableTaps = false;
+            };
+          }
+          ./modules/darwin
+        ];
+      };
     };
   };
 }
