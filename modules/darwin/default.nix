@@ -94,6 +94,7 @@
         NSNavPanelExpandedStateForSaveMode = true;
         NSNavPanelExpandedStateForSaveMode2 = true;
         NSUseAnimatedFocusRing = false;
+        NSWindowResizeTime = 0.001; # Make dialogs instantly appear
       };
 
       loginwindow.SHOWFULLNAME = true; # Remove name on login screen
