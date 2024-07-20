@@ -50,7 +50,7 @@
 
   services = {
     nix-daemon.enable = true;
-    tailscale.enable = true;
+    #tailscale.enable = true; # Enable after ssh and exit node support is ready
     yabai.enable = true;
     yabai.enableScriptingAddition = true;
     skhd.enable = true;
@@ -141,6 +141,7 @@
       "firefox"
       "thunderbird"
       "libreoffice"
+      "tailscale" # Temporary solution
       "quicksilver"
       "scroll-reverser"
       "discretescroll"
