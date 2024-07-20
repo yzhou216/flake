@@ -41,6 +41,7 @@
       alacritty
       neovim
       alejandra
+      jankyborders
     ];
 
     systemPath = ["/opt/homebrew/bin"];
