@@ -93,6 +93,8 @@
         NSDocumentSaveNewDocumentsToCloud = false;
         NSNavPanelExpandedStateForSaveMode = true;
         NSNavPanelExpandedStateForSaveMode2 = true;
+        PMPrintingExpandedStateForPrint = true;
+        PMPrintingExpandedStateForPrint2 = true;
         NSUseAnimatedFocusRing = false;
         NSWindowResizeTime = 0.001; # Make dialogs instantly appear
       };
