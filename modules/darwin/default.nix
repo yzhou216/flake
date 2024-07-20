@@ -137,6 +137,7 @@
       "libreoffice"
       "quicksilver"
       "scroll-reverser"
+      "discretescroll"
       "swift-quit"
       "signal"
       "steam"
