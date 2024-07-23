@@ -19,6 +19,9 @@ if csrutil status | grep 'enabled'; then
   echo $password | sudo -S shutdown -h now
 fi
 
+# yabai: enable non-Apple-signed arm64e binaries for Apple Silicon
+echo $password | sudo -S nvram boot-args=-arm64e_preview_abi
+
 # nix-darwin
 build_flake () {
   nix run --extra-experimental-features "nix-command flakes" \
@@ -28,8 +31,5 @@ build_flake () {
 # Run twice to ensure
 build_flake
 build_flake
-
-# yabai: enable non-Apple-signed arm64e binaries for Apple Silicon
-echo $password | sudo -S nvram boot-args=-arm64e_preview_abi
 
 printf "done!\n\n"
