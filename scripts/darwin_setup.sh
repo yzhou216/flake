@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-read -p "STOP! Did you grant Full Disk Access for Terminal in System Settings?
-^C to terminate if you have not, press return to continue"
+open /System/Library/PreferencePanes/Security.prefPane
+echo "STOP! Did you grant Full Disk Access for Terminal in System Settings?
+^C to terminate if you have not, type your password to continue."
 
 echo -n Password: 
 read -s password
