@@ -131,8 +131,8 @@
         location = "~/Pictures";
       };
 
-      #TODO
-      #".GlobalPreferences"."com.apple.mouse.scaling" = 5.0;
+      # 5 "ticks" in GUI
+      ".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
 
       # Disable pointer acceleration
       CustomUserPreferences.NSGlobalDomain."com.apple.mouse.linear" = true;
