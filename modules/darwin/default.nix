@@ -39,6 +39,7 @@
       git
       stow
       tree
+      universal-ctags
       alacritty
       neovim
       alejandra
