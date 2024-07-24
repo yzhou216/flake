@@ -40,6 +40,7 @@
       stow
       tree
       universal-ctags
+      cscope
       alacritty
       neovim
       alejandra
