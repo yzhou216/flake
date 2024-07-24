@@ -114,6 +114,7 @@
 
       dock = {
         autohide = true;
+        autohide-time-modifier = 0.0; # Disable Dock autohide animation
         show-recents = false;
         static-only = true; # Show running programs only
         show-process-indicators = false;
