@@ -114,6 +114,7 @@
 
       dock = {
         autohide = true;
+        show-recents = false;
         static-only = true; # Show running programs only
         show-process-indicators = false;
         launchanim = false;
