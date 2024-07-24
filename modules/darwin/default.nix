@@ -126,6 +126,11 @@
         wvous-tr-corner = 1;
       };
 
+      screencapture = {
+        disable-shadow = true;
+        location = "~/Pictures";
+      };
+
       #TODO
       #".GlobalPreferences"."com.apple.mouse.scaling" = 5.0;
 
