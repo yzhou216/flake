@@ -109,6 +109,7 @@
         ShowStatusBar = true;
         ShowPathbar = false;
         CreateDesktop = false;
+        FXDefaultSearchScope = "SCcf"; # Current directory
         QuitMenuItem = true;
       };
 
