@@ -51,6 +51,10 @@
     pathsToLink = ["/Applications"];
   };
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {fonts = ["Hack"];})
+  ];
+
   services = {
     nix-daemon.enable = true;
     #tailscale.enable = true; # Enable after ssh and exit node support is ready
