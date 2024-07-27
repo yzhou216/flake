@@ -123,6 +123,7 @@
       dock = {
         autohide = true;
         autohide-time-modifier = 0.0; # Disable Dock autohide animation
+        autohide-delay = 1.7976931348623157e308; # Disable Dock (kind of)
         show-recents = false;
         static-only = true; # Show running programs only
         show-process-indicators = false;
