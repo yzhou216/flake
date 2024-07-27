@@ -130,6 +130,7 @@
         mineffect = "scale";
         mru-spaces = false; # Disable automatic space rearrangement
         orientation = "right";
+        tilesize = 16;
         wvous-bl-corner = 1;
         wvous-br-corner = 1;
         wvous-tl-corner = 1;
