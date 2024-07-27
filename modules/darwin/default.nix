@@ -128,6 +128,7 @@
         show-process-indicators = false;
         launchanim = false;
         mineffect = "scale";
+        mru-spaces = false; # Disable automatic space rearrangement
         orientation = "right";
         wvous-bl-corner = 1;
         wvous-br-corner = 1;
