@@ -121,6 +121,7 @@
     tmux
     wget
     stow
+    tree
     unzip
 
     nil
