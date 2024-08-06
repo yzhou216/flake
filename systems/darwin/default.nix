@@ -31,6 +31,7 @@
     shells = with pkgs; [bash];
     systemPackages = with pkgs; [
       coreutils
+      gcc
       gnumake
       emacs-macport
       git
