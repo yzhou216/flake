@@ -149,8 +149,8 @@
     swayidle
 
     # Theming
-    pkgs.adwaita-icon-theme
-    pkgs.gnome-themes-extra
+    adwaita-icon-theme
+    gnome-themes-extra
     qt5ct
     qt6ct
 
