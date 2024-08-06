@@ -36,6 +36,7 @@
     systemPackages = with pkgs; [
       coreutils
       gnumake
+      emacs-macport
       git
       stow
       tree
