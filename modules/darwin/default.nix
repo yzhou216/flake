@@ -163,7 +163,7 @@
       "thunderbird"
       "libreoffice"
       "tailscale" # Temporary solution
-      "quicksilver"
+      "dmenu-mac"
       "scroll-reverser"
       "discretescroll"
       "swift-quit"
