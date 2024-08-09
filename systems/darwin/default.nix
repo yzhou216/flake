@@ -39,6 +39,7 @@
       tree
       universal-ctags
       cscope
+      python3
       alacritty
       neovim
       alejandra
