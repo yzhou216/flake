@@ -181,7 +181,6 @@
       "thunderbird"
       "libreoffice"
       "tailscale" # Temporary solution
-      "dmenu-mac"
       "scroll-reverser"
       "discretescroll"
       "swift-quit"
