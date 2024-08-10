@@ -119,9 +119,10 @@
   };
 
   security = {
-    # Use doas instead of sudo
-    doas.enable = true;
+    # Use sudo-rs and doas instead of sudo
     sudo.enable = false;
+    sudo-rs.enable = true;
+    doas.enable = true;
 
     rtkit.enable = true;
   };
