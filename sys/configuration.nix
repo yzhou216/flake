@@ -133,9 +133,9 @@
     delve
     guile
     python3
-    python311Packages.pip
-    python311Packages.python-lsp-server
-    python311Packages.debugpy
+    python312Packages.pip
+    python312Packages.python-lsp-server
+    python312Packages.debugpy
     temurin-bin-17
 
     river
