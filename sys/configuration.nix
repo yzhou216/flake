@@ -135,6 +135,7 @@
     python3
     python311Packages.pip
     python311Packages.python-lsp-server
+    python311Packages.debugpy
     temurin-bin-17
 
     river
