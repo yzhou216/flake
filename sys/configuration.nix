@@ -98,7 +98,15 @@
 
     # Enable touchpad support (enabled default in most desktopManager).
     # xserver.libinput.enable = true;
+
+    emacs.package = pkgs.emacsUnstable;
   };
+
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+    }))
+  ];
 
   hardware = {
     # Enable sound with pipewire.
@@ -143,7 +151,7 @@
     readline
     git
 
-    emacs
+    emacs-git
     vim
     neovim
 
