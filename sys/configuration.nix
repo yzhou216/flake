@@ -8,43 +8,54 @@
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
-  networking.hostName = "galago";
+  networking = {
+    hostName = "galago";
+    # Network proxy
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Network proxy
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Use iwd for networking
-  networking.networkmanager.enable = false;
-  networking.wireless.iwd.enable = true;
-  networking.wireless.iwd.settings = {
-    IPv6 = {
-      Enabled = true;
+    # Use iwd for networking
+    networkmanager.enable = false;
+    wireless.iwd.enable = true;
+    wireless.iwd.settings = {
+      IPv6 = {
+        Enabled = true;
+      };
+      Settings = {
+        AutoConnect = true;
+      };
     };
-    Settings = {
-      AutoConnect = true;
-    };
+
+    # Open ports in the firewall.
+    # firewall.allowedTCPPorts = [ ... ];
+    # firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # firewall.enable = false;
   };
 
   time.timeZone = "America/Los_Angeles";
 
   # Internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
   };
 
   services = {
@@ -63,6 +74,30 @@
 
     # Enable CUPS to print documents.
     printing.enable = true;
+
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
+
+    tailscale.enable = true;
+    tailscale.useRoutingFeatures = "client";
+    keyd = {
+      enable = true;
+      keyboards.default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "layer(nav)";
+            rightcontrol = "rightmeta";
+          };
+          "nav:C" = {
+            "[" = "esc";
+          };
+        };
+      };
+    };
+
+    # Enable touchpad support (enabled default in most desktopManager).
+    # xserver.libinput.enable = true;
   };
 
   hardware = {
@@ -82,9 +117,6 @@
 
     rtkit.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # User account
   users.users.yiyu = {
@@ -163,61 +195,36 @@
     lutris
   ];
 
-  programs.sway.enable = true; # backup for river
-  programs.kdeconnect.enable = true;
-  programs.steam.enable = true;
+  programs = {
+    sway.enable = true; # backup for river
+    kdeconnect.enable = true;
+    steam.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # mtr.enable = true;
+    # gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    # };
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.tailscale.enable = true;
-  services.tailscale.useRoutingFeatures = "client";
-  services.keyd = {
-    enable = true;
-    keyboards.default = {
-      ids = ["*"];
-      settings = {
-        main = {
-          capslock = "layer(nav)";
-          rightcontrol = "rightmeta";
-        };
-        "nav:C" = {
-          "[" = "esc";
-        };
-      };
-    };
+    # Remove new line character from default prompt PS1
+    bash.promptInit = ''
+      if [ "$TERM" != "dumb" ] || [ -n "$INSIDE_EMACS" ]; then
+        PROMPT_COLOR="1;31m"
+        ((UID)) && PROMPT_COLOR="1;32m"
+        if [ -n "$INSIDE_EMACS" ]; then
+          # Emacs term mode doesn't support xterm title escape sequence (\e]0;)
+          PS1="\[\033[$PROMPT_COLOR\][\u@\h:\w]\\$\[\033[0m\] "
+        else
+          PS1="\[\033[$PROMPT_COLOR\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\\$\[\033[0m\] "
+        fi
+        if test "$TERM" = "xterm"; then
+          PS1="\[\033]2;\h:\u:\w\007\]$PS1"
+        fi
+      fi
+    '';
   };
-
-  # Remove new line character from default prompt PS1
-  programs.bash.promptInit = ''
-    if [ "$TERM" != "dumb" ] || [ -n "$INSIDE_EMACS" ]; then
-      PROMPT_COLOR="1;31m"
-      ((UID)) && PROMPT_COLOR="1;32m"
-      if [ -n "$INSIDE_EMACS" ]; then
-        # Emacs term mode doesn't support xterm title escape sequence (\e]0;)
-        PS1="\[\033[$PROMPT_COLOR\][\u@\h:\w]\\$\[\033[0m\] "
-      else
-        PS1="\[\033[$PROMPT_COLOR\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\\$\[\033[0m\] "
-      fi
-      if test "$TERM" = "xterm"; then
-        PS1="\[\033]2;\h:\u:\w\007\]$PS1"
-      fi
-    fi
-  '';
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
