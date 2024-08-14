@@ -138,8 +138,8 @@
     ];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true; # Allow unfree packages
+  nixpkgs.config.allowBroken = true; # Allow broken packages
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
