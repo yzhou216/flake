@@ -164,6 +164,7 @@
     stow
     tree
     unzip
+    lilypond-unstable-with-fonts
 
     nil
     alejandra
