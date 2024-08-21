@@ -178,6 +178,7 @@
     python312Packages.pip
     python312Packages.python-lsp-server
     python312Packages.debugpy
+    ihaskell # bin/ghci
     haskellPackages.stack
     haskellPackages.haskell-language-server
     temurin-bin-17
