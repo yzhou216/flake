@@ -164,6 +164,7 @@
     stow
     tree
     unzip
+    texliveFull
     lilypond-unstable-with-fonts
 
     nil
