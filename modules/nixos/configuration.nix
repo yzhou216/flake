@@ -167,6 +167,8 @@
     texliveFull
     lilypond-unstable-with-fonts
 
+    miniserve
+
     nil
     alejandra
 
