@@ -174,6 +174,8 @@
     go
     gopls
     delve
+    gofumpt
+    golines
     guile
     python3
     python312Packages.pip
