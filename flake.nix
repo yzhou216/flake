@@ -45,9 +45,9 @@
         specialArgs = {inherit inputs;};
         modules = [
           nixos-hardware.nixosModules.system76
-          #.sys/BASE.nix
-          ./sys/hardware-configuration.nix
-          ./sys/configuration.nix
+          #./modules/BASE.nix
+          ./modules/nixos/hardware-configuration.nix
+          ./modules/nixos/configuration.nix
         ];
       };
     };
