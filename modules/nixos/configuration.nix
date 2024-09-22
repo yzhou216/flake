@@ -175,8 +175,8 @@
     gofumpt
     golines
     guile
-    python3
-    python312Packages.pip
+    rustpython
+    uv
     python312Packages.python-lsp-server
     python312Packages.debugpy
     ihaskell # bin/ghci
