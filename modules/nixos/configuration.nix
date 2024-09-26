@@ -130,6 +130,7 @@
     extraGroups = ["wheel" "video" "networkmanager"];
     packages = with pkgs; [
       firefox
+      nyxt
       thunderbird
     ];
   };
