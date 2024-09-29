@@ -185,6 +185,9 @@
     haskellPackages.haskell-language-server
     temurin-bin-17
 
+    sqlite
+    sqls
+
     river
     pamixer
     kanshi
