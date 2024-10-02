@@ -141,6 +141,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    man-pages
+    man-pages-posix
+    linux-manual
+
     gcc
     gdb
     gnumake
@@ -250,6 +254,15 @@
         fi
       fi
     '';
+  };
+
+  documentation = {
+    enable = true;
+    man = {
+      enable = true;
+      generateCaches = true;
+    };
+    dev.enable = true;
   };
 
   # This value determines the NixOS release from which the default
