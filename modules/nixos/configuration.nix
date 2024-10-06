@@ -152,6 +152,7 @@
     libtool
     readline
     git
+    sshfs
 
     emacs-git
     vim
