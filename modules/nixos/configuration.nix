@@ -74,6 +74,11 @@
     # Enable the OpenSSH daemon.
     openssh.enable = true;
 
+    flatpak = {
+      enable = true;
+      packages = ["io.github.zen_browser.zen"];
+    };
+
     tailscale.enable = true;
     tailscale.useRoutingFeatures = "client";
     keyd = {

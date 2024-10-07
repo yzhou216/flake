@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixos-hardware.url = "nixos-hardware";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -32,6 +33,7 @@
     self,
     nixpkgs,
     nixos-hardware,
+    nix-flatpak,
     darwin,
     nix-homebrew,
     homebrew-bundle,
@@ -45,6 +47,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           nixos-hardware.nixosModules.system76
+          nix-flatpak.nixosModules.nix-flatpak
           #./modules/BASE.nix
           ./modules/nixos/hardware-configuration.nix
           ./modules/nixos/configuration.nix
