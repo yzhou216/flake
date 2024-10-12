@@ -216,6 +216,7 @@
     qt6ct
 
     alacritty
+    fragments
     digital
     libreoffice
     signal-desktop
