@@ -157,6 +157,7 @@
     libtool
     readline
     git
+    jujutsu
     sshfs
 
     emacs-git
