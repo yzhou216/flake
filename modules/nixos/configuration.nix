@@ -178,6 +178,7 @@
     miniserve
 
     nixos-anywhere
+    nixos-facter
 
     nil
     alejandra
