@@ -177,6 +177,8 @@
 
     miniserve
 
+    nixos-anywhere
+
     nil
     alejandra
 
