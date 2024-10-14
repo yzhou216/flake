@@ -3,8 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixos-hardware.url = "nixos-hardware";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -32,8 +37,9 @@
   outputs = {
     self,
     nixpkgs,
-    nixos-hardware,
     nix-flatpak,
+    nixos-facter-modules,
+    disko,
     darwin,
     nix-homebrew,
     homebrew-bundle,
@@ -46,10 +52,17 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
-          nixos-hardware.nixosModules.system76
           nix-flatpak.nixosModules.nix-flatpak
+          nixos-facter-modules.nixosModules.facter
+          {
+            config.facter.reportPath =
+              if builtins.pathExists ./modules/nixos/facter.json
+              then ./modules/nixos/facter.json
+              else throw "Have you forgotten to run nixos-anywhere with `--generate-hardware-config nixos-facter ./facter.json`?";
+          }
+          disko.nixosModules.disko
+          ./disk-config.nix
           #./modules/BASE.nix
-          ./modules/nixos/hardware-configuration.nix
           ./modules/nixos/configuration.nix
         ];
       };
