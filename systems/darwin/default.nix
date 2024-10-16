@@ -1,10 +1,6 @@
 # Darwin preferences and config items
 {pkgs, ...}: {
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-    auto-optimise-store = true;
-    trusted-users = ["root" "@wheel"];
-  };
+  imports = [../commons.nix];
 
   networking.hostName = "m1";
 
