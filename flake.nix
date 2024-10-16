@@ -56,14 +56,13 @@
           nixos-facter-modules.nixosModules.facter
           {
             config.facter.reportPath =
-              if builtins.pathExists ./modules/nixos/facter.json
-              then ./modules/nixos/facter.json
+              if builtins.pathExists ./modules/facter/galago.json
+              then ./modules/facter/galago.json
               else throw "Have you forgotten to run nixos-anywhere with `--generate-hardware-config nixos-facter ./facter.json`?";
           }
           disko.nixosModules.disko
-          ./disk-config.nix
-          #./modules/BASE.nix
-          ./modules/nixos/configuration.nix
+          ./modules/disko/bcachefs.nix
+          ./systems/nixos/configuration.nix
         ];
       };
     };
@@ -90,7 +89,7 @@
               mutableTaps = false;
             };
           }
-          ./modules/darwin
+          ./systems/darwin
         ];
       };
     };
