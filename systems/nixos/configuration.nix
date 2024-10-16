@@ -73,6 +73,7 @@
 
     flatpak = {
       enable = true;
+      update.onActivation = true;
       packages = ["io.github.zen_browser.zen"];
     };
 
