@@ -1,5 +1,9 @@
 # Darwin preferences and config items
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [../commons.nix];
 
   networking.hostName = "m1";
@@ -31,12 +35,15 @@
     shells = with pkgs; [bash];
     systemPackages = with pkgs; [
       coreutils
+      gcc
       gnumake
+      emacs-macport
       git
       stow
       tree
       universal-ctags
       cscope
+      python3
       alacritty
       neovim
       alejandra
@@ -64,6 +71,19 @@
   system = {
     # backwards compat; **DO NOT CHANGE!!**
     stateVersion = 4;
+
+    # Add aliases for programs in Nix store
+    activationScripts.postUserActivation.text = ''
+      app_folder="$HOME/Applications/Nix Trampolines"
+      rm -rf "$app_folder"
+      mkdir -p "$app_folder"
+      for app in $(find "${config.system.build.applications}/Applications" -type l); do
+          app_target="$app_folder/$(basename $app)"
+          real_app="$(readlink $app)"
+          echo "mkalias \"$real_app\" \"$app_target\"" >&2
+          ${pkgs.mkalias}/bin/mkalias "$real_app" "$app_target"
+      done
+    '';
 
     startup.chime = false;
 
@@ -157,7 +177,6 @@
       "thunderbird"
       "libreoffice"
       "tailscale" # Temporary solution
-      "quicksilver"
       "scroll-reverser"
       "discretescroll"
       "swift-quit"
