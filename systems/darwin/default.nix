@@ -1,5 +1,9 @@
 # Darwin preferences and config items
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [../commons.nix];
 
   networking.hostName = "m1";
