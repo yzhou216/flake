@@ -9,21 +9,26 @@
 
   networking = {
     hostName = "galago";
-    # Network proxy
-    # proxy.default = "http://user:password@proxy:port/";
-    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Use iwd for networking
     networkmanager.enable = false;
-    wireless.iwd.enable = true;
-    wireless.iwd.settings = {
-      IPv6 = {
-        Enabled = true;
-      };
-      Settings = {
-        AutoConnect = true;
+    wireless = {
+      iwd = {
+        enable = true;
+        settings = {
+          IPv6 = {
+            Enabled = true;
+          };
+          Settings = {
+            AutoConnect = true;
+          };
+        };
       };
     };
+
+    # Network proxy
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Open ports in the firewall.
     # firewall.allowedTCPPorts = [ ... ];
