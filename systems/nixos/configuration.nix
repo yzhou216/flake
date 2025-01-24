@@ -57,6 +57,8 @@
   };
 
   services = {
+    # Enable sound with pipewire.
+    pulseaudio.enable = false;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -113,9 +115,6 @@
   ];
 
   hardware = {
-    # Enable sound with pipewire.
-    pulseaudio.enable = false;
-
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
 
@@ -219,7 +218,7 @@
     # Theming
     adwaita-icon-theme
     gnome-themes-extra
-    qt5ct
+    libsForQt5.qt5ct
     qt6ct
 
     alacritty
