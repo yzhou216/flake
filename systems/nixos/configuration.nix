@@ -81,6 +81,7 @@
     flatpak = {
       enable = true;
       update.onActivation = true;
+      uninstallUnmanaged = true;
       packages = ["io.github.zen_browser.zen"];
     };
 
