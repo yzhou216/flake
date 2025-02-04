@@ -82,7 +82,7 @@
       enable = true;
       update.onActivation = true;
       uninstallUnmanaged = true;
-      packages = ["io.github.zen_browser.zen"];
+      packages = ["app.zen_browser.zen"];
     };
 
     tailscale.enable = true;
