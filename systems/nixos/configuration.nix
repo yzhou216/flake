@@ -251,7 +251,7 @@
         swayidle
       ];
     };
-    sway.enable = true; # backup for river
+
     kdeconnect.enable = true;
     steam.enable = true;
 
