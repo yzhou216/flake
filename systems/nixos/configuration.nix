@@ -94,6 +94,11 @@
     # Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
 
+    guix = {
+      enable = true;
+      gc.enable = true;
+    };
+
     flatpak = {
       enable = true;
       update.onActivation = true;
