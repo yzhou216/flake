@@ -56,6 +56,19 @@
     };
   };
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true; # Allow unfree packages
+      allowBroken = true; # Allow broken packages
+    };
+
+    overlays = [
+      (import (builtins.fetchTarball {
+        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+      }))
+    ];
+  };
+
   services = {
     # Enable sound with pipewire.
     pulseaudio.enable = false;
@@ -85,8 +98,11 @@
       packages = ["app.zen_browser.zen"];
     };
 
-    tailscale.enable = true;
-    tailscale.useRoutingFeatures = "client";
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "client";
+    };
+
     keyd = {
       enable = true;
       keyboards.default = {
@@ -108,12 +124,6 @@
 
     emacs.package = pkgs.emacsUnstable;
   };
-
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-    }))
-  ];
 
   hardware = {
     bluetooth.enable = true;
@@ -142,9 +152,6 @@
       thunderbird
     ];
   };
-
-  nixpkgs.config.allowUnfree = true; # Allow unfree packages
-  nixpkgs.config.allowBroken = true; # Allow broken packages
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
