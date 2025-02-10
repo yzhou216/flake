@@ -212,17 +212,6 @@
     sqlite
     sqls
 
-    river
-    pamixer
-    kanshi
-    yambar
-    wofi
-    fnott
-    wayshot
-    slurp
-    wl-clipboard-rs
-    swayidle
-
     # Theming
     adwaita-icon-theme
     gnome-themes-extra
@@ -246,6 +235,21 @@
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/yiyu/flake";
+    };
+
+    river = {
+      enable = true;
+      extraPackages = with pkgs; [
+        pamixer
+        kanshi
+        yambar
+        wofi
+        fnott
+        wayshot
+        slurp
+        wl-clipboard-rs
+        swayidle
+      ];
     };
     sway.enable = true; # backup for river
     kdeconnect.enable = true;
