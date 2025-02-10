@@ -91,6 +91,9 @@
     # Enable the OpenSSH daemon.
     openssh.enable = true;
 
+    # Enable touchpad support (enabled default in most desktopManager).
+    libinput.enable = true;
+
     flatpak = {
       enable = true;
       update.onActivation = true;
@@ -118,9 +121,6 @@
         };
       };
     };
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    # xserver.libinput.enable = true;
 
     emacs.package = pkgs.emacsUnstable;
   };
