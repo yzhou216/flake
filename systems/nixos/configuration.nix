@@ -199,6 +199,7 @@
     alejandra
 
     rustup
+    bacon
     go
     gopls
     delve
