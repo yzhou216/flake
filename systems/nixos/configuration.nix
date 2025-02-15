@@ -187,7 +187,7 @@
     stow
     tree
     unzip
-    texliveFull
+    tectonic
     lilypond-unstable-with-fonts
 
     miniserve
