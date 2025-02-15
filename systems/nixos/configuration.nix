@@ -208,8 +208,8 @@
     guile
     rustpython
     uv
-    python312Packages.python-lsp-server
-    python312Packages.debugpy
+    python313Packages.python-lsp-server
+    python313Packages.debugpy
     ihaskell # bin/ghci
     haskellPackages.stack
     haskellPackages.haskell-language-server
