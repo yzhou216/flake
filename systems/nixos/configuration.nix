@@ -208,7 +208,7 @@
     guile
     rustpython
     uv
-    python313Packages.python-lsp-server
+    pylyzer
     python313Packages.debugpy
     ihaskell # bin/ghci
     haskellPackages.stack
