@@ -61,8 +61,7 @@
               else throw "Have you forgotten to run nixos-anywhere with `--generate-hardware-config nixos-facter ./facter.json`?";
           }
           disko.nixosModules.disko
-          ./modules/disko/bcachefs.nix
-          ./systems/nixos/configuration.nix
+          ./systems/nixos/galago.nix
         ];
       };
     };

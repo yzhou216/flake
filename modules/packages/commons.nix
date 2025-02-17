@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  imports = [../commons.nix];
-
   # Bootloader
   boot.loader = {
     systemd-boot.enable = true;
@@ -8,8 +6,6 @@
   };
 
   networking = {
-    hostName = "galago";
-
     # Use iwd for networking
     networkmanager.enable = false;
     wireless = {
@@ -99,13 +95,6 @@
       gc.enable = true;
     };
 
-    flatpak = {
-      enable = true;
-      update.onActivation = true;
-      uninstallUnmanaged = true;
-      packages = ["app.zen_browser.zen"];
-    };
-
     tailscale = {
       enable = true;
       useRoutingFeatures = "client";
@@ -126,8 +115,6 @@
         };
       };
     };
-
-    emacs.package = pkgs.emacsUnstable;
   };
 
   hardware = {
@@ -175,7 +162,6 @@
     jujutsu
     sshfs
 
-    emacs-git
     vim
     neovim
 
@@ -217,20 +203,6 @@
 
     sqlite
     sqls
-
-    # Theming
-    adwaita-icon-theme
-    gnome-themes-extra
-    libsForQt5.qt5ct
-    qt6ct
-
-    alacritty
-    fragments
-    digital
-    libreoffice
-    signal-desktop
-    gurk-rs
-    lutris
   ];
 
   programs = {
@@ -242,24 +214,6 @@
       clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/yiyu/flake";
     };
-
-    river = {
-      enable = true;
-      extraPackages = with pkgs; [
-        pamixer
-        kanshi
-        yambar
-        wofi
-        fnott
-        wayshot
-        slurp
-        wl-clipboard-rs
-        swayidle
-      ];
-    };
-
-    kdeconnect.enable = true;
-    steam.enable = true;
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
@@ -295,12 +249,4 @@
     };
     dev.enable = true;
   };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
 }
