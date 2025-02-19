@@ -170,6 +170,7 @@
 
     universal-ctags
     cscope
+    ispell
 
     tmux
     wget
