@@ -177,6 +177,7 @@
     stow
     tree
     unzip
+
     tectonic
     texlab
     lilypond-unstable-with-fonts
