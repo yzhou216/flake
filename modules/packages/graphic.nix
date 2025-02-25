@@ -14,6 +14,8 @@
     fragments
     digital
     libreoffice
+    nyxt
+    firefox
     signal-desktop
     gurk-rs
     lutris
@@ -35,6 +37,7 @@
       ];
     };
 
+    enable.thunderbird = true;
     kdeconnect.enable = true;
     steam.enable = true;
   };

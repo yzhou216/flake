@@ -141,11 +141,6 @@
     isNormalUser = true;
     description = "Yiyu Zhou";
     extraGroups = ["wheel" "video" "networkmanager"];
-    packages = with pkgs; [
-      firefox
-      nyxt
-      thunderbird
-    ];
   };
 
   # List packages installed in system profile. To search, run:
