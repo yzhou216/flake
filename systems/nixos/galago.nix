@@ -5,6 +5,7 @@
     ../../modules/disko/bcachefs.nix
   ];
 
+  hardware.system76.enableAll = true;
   networking.hostName = "galago";
 
   # This value determines the NixOS release from which the default
