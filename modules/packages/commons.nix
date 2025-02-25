@@ -218,7 +218,7 @@
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
-      flake = "/home/yiyu/flake";
+      flake = "/home/yiyu/.config/flake";
     };
 
     # Some programs need SUID wrappers, can be configured further or are
