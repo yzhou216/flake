@@ -36,7 +36,7 @@
       ];
     };
 
-    enable.thunderbird = true;
+    thunderbird.enable = true;
     kdeconnect.enable = true;
     steam.enable = true;
   };
