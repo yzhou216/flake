@@ -15,6 +15,7 @@
     digital
     libreoffice
     nyxt
+    tor-browser
     signal-desktop
     gurk-rs
     lutris
