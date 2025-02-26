@@ -3,23 +3,23 @@
 
   environment.systemPackages = with pkgs; [
     emacs-git
+    alacritty
+    digital
+    musescore
+    libreoffice
+    lutris
+
+    nyxt
+    tor-browser
+    fragments
+    signal-desktop
+    gurk-rs
 
     # Theming
     adwaita-icon-theme
     gnome-themes-extra
     libsForQt5.qt5ct
     qt6ct
-
-    alacritty
-    fragments
-    digital
-    musescore
-    libreoffice
-    nyxt
-    tor-browser
-    signal-desktop
-    gurk-rs
-    lutris
   ];
 
   programs = {
