@@ -13,6 +13,7 @@
     alacritty
     fragments
     digital
+    musescore
     libreoffice
     nyxt
     tor-browser
