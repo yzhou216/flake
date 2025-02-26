@@ -193,6 +193,7 @@
     gofumpt
     golines
     guile
+    sbcl
     rustpython
     uv
     pylyzer
