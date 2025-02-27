@@ -35,6 +35,7 @@
         slurp
         wl-clipboard-rs
         swayidle
+        warpd
       ];
     };
 
