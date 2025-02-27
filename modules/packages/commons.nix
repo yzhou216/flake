@@ -11,20 +11,12 @@
   networking = {
     # Use iwd for networking
     networkmanager.enable = false;
-    wireless = {
-      iwd = {
-        enable = true;
-        settings = {
-          General = {
-            AddressRandomization = true;
-          };
-          IPv6 = {
-            Enabled = true;
-          };
-          Settings = {
-            AutoConnect = true;
-          };
-        };
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        General.AddressRandomization = true;
+        IPv6.Enabled = true;
+        Settings.AutoConnect = true;
       };
     };
 
