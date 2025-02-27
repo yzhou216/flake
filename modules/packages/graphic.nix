@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     emacs-git
     alacritty
+    tdf
     digital
     musescore
     libreoffice
