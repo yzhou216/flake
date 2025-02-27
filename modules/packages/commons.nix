@@ -15,6 +15,9 @@
       iwd = {
         enable = true;
         settings = {
+          General = {
+            AddressRandomization = true;
+          };
           IPv6 = {
             Enabled = true;
           };
