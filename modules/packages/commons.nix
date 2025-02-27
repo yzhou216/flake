@@ -73,9 +73,11 @@
     pulseaudio.enable = false;
     pipewire = {
       enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
       pulse.enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
 
@@ -121,9 +123,10 @@
   };
 
   hardware = {
-    bluetooth.enable = true;
-    bluetooth.powerOnBoot = true;
-
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
     acpilight.enable = true;
   };
 
@@ -159,15 +162,12 @@
     git
     jujutsu
     sshfs
-
-    vim
-    neovim
+    miniserve
 
     universal-ctags
     cscope
     ispell
 
-    tmux
     wget
     stow
     tree
@@ -177,13 +177,8 @@
     texlab
     lilypond-unstable-with-fonts
 
-    miniserve
-
     nixos-anywhere
     nixos-facter
-
-    nil
-    alejandra
 
     rustup
     bacon
@@ -201,13 +196,17 @@
     ihaskell # bin/ghci
     haskellPackages.stack
     haskellPackages.haskell-language-server
-    temurin-bin-17
-
+    temurin-bin # OpenJDK
     sqlite
     sqls
+    nil
+    alejandra
   ];
 
   programs = {
+    vim.enable = true;
+    neovim.enable = true;
+    tmux.enable = true;
     htop.enable = true;
     direnv.enable = true;
     nh = {
