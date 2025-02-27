@@ -3,7 +3,6 @@
 
   environment.systemPackages = with pkgs; [
     emacs-git
-    alacritty
     tdf
     digital
     musescore
@@ -37,6 +36,16 @@
         wl-clipboard-rs
         swayidle
       ];
+    };
+
+    foot = {
+      enable = true;
+      theme = "modus-vivendi";
+      settings = {
+        main = {
+          font = "monospace:size=14";
+        };
+      };
     };
 
     thunderbird.enable = true;
