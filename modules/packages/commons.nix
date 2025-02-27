@@ -20,15 +20,19 @@
       };
     };
 
+    # Use nftables as the backend instead of iptables
+    nftables.enable = true;
+    firewall = {
+      enable = true;
+      package = pkgs.nftables;
+      # Open ports in the firewall.
+      # allowedTCPPorts = [ ... ];
+      # allowedUDPPorts = [ ... ];
+    };
+
     # Network proxy
     # proxy.default = "http://user:password@proxy:port/";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Open ports in the firewall.
-    # firewall.allowedTCPPorts = [ ... ];
-    # firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # firewall.enable = false;
   };
 
   time.timeZone = "America/Los_Angeles";
