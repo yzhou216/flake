@@ -210,9 +210,11 @@
     direnv.enable = true;
     nh = {
       enable = true;
-      clean.enable = true;
-      clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/yiyu/.config/flake";
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 4d --keep 3";
+      };
     };
 
     # Some programs need SUID wrappers, can be configured further or are
