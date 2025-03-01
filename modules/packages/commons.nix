@@ -202,6 +202,8 @@
     nil
     alejandra
     devenv
+    glow
+    marksman
   ];
 
   programs = {
