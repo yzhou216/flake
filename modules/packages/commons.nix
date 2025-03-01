@@ -181,6 +181,7 @@
 
     rustup
     bacon
+    dioxus-cli
     go
     gopls
     delve
