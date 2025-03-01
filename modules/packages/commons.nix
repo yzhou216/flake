@@ -9,8 +9,8 @@
   };
 
   networking = {
-    # Use iwd for networking
-    networkmanager.enable = false;
+    # Use iwd as the WiFi backend for NetworkManager
+    networkmanager.wifi.backend = "iwd";
     wireless.iwd = {
       enable = true;
       settings = {
