@@ -200,6 +200,7 @@
     sqls
     nil
     alejandra
+    devenv
   ];
 
   programs = {
