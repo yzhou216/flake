@@ -152,6 +152,20 @@
     man-pages-posix
     linux-manual
 
+    nixos-anywhere
+    nixos-facter
+
+    wget
+    stow
+    tree
+    unzip
+    sshfs
+    miniserve
+
+    universal-ctags
+    cscope
+    ispell
+
     gcc
     gdb
     gnumake
@@ -160,50 +174,54 @@
     readline
     git
     jujutsu
-    sshfs
-    miniserve
 
-    universal-ctags
-    cscope
-    ispell
-
-    wget
-    stow
-    tree
-    unzip
-
+    # TeX
     tectonic
     texlab
     lilypond-unstable-with-fonts
 
-    nixos-anywhere
-    nixos-facter
-
+    # Rust
     rustup
     bacon
     dioxus-cli
+
+    # Go
     go
     gopls
     delve
     gofumpt
     golines
     guile
+
+    # Common Lisp
     sbcl
+
+    # Python
     rustpython
     uv
     pylyzer
     python313Packages.debugpy
+
+    # Haskell
     ihaskell # bin/ghci
     haskellPackages.stack
     haskellPackages.haskell-language-server
+
+    # Java
     temurin-bin # OpenJDK
+
+    # SQL
     sqlite
     sqls
+
+    # Markdown
+    glow
+    marksman
+
+    # Nix
     nil
     alejandra
     devenv
-    glow
-    marksman
   ];
 
   programs = {
