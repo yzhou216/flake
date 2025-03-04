@@ -32,6 +32,9 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+
+    # Temporary inputs
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = {
