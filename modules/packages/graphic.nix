@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [./commons.nix];
 
   environment.systemPackages = with pkgs; [
@@ -10,6 +14,7 @@
     lutris
 
     nyxt
+    inputs.zen-browser.packages."${system}".default # beta
     tor-browser
     fragments
     signal-desktop
@@ -58,6 +63,6 @@
     enable = true;
     update.onActivation = true;
     uninstallUnmanaged = true;
-    packages = ["app.zen_browser.zen"];
+    packages = [];
   };
 }
