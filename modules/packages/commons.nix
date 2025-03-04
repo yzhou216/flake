@@ -175,6 +175,10 @@
     git
     jujutsu
 
+    # Bash
+    bash-language-server
+    shfmt
+
     # TeX
     tectonic
     texlab
