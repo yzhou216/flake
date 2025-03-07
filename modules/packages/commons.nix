@@ -102,6 +102,11 @@
     tailscale = {
       enable = true;
       useRoutingFeatures = "client";
+      extraUpFlags = [
+        "--advertise-exit-node"
+        "--exit-node-allow-lan-access"
+        "--ssh"
+      ];
     };
 
     keyd = {
