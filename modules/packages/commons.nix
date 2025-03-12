@@ -118,10 +118,9 @@
         ids = [ "*" ];
         settings = {
           main = {
-            capslock = "layer(nav)";
-            rightcontrol = "rightmeta";
+            capslock = "leftcontrol";
           };
-          "nav:C" = {
+          "control" = {
             "[" = "esc";
           };
         };
