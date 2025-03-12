@@ -229,7 +229,7 @@
 
     # Nix
     nil
-    alejandra
+    nixfmt-rfc-style
     devenv
   ];
 
