@@ -117,12 +117,8 @@
       keyboards.default = {
         ids = [ "*" ];
         settings = {
-          main = {
-            capslock = "leftcontrol";
-          };
-          "control" = {
-            "[" = "esc";
-          };
+          main.capslock = "leftcontrol";
+          "control"."[" = "esc";
         };
       };
     };
