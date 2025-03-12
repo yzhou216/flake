@@ -37,63 +37,66 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nix-flatpak,
-    nixos-facter-modules,
-    disko,
-    darwin,
-    nix-homebrew,
-    homebrew-bundle,
-    homebrew-core,
-    homebrew-cask,
-    ...
-  } @ inputs: {
-    nixosConfigurations = {
-      galago = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          nix-flatpak.nixosModules.nix-flatpak
-          nixos-facter-modules.nixosModules.facter
-          {
-            config.facter.reportPath =
-              if builtins.pathExists ./modules/facter/galago.json
-              then ./modules/facter/galago.json
-              else throw "Have you forgotten to run nixos-anywhere with `--generate-hardware-config nixos-facter ./facter.json`?";
-          }
-          disko.nixosModules.disko
-          ./systems/nixos/galago.nix
-        ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nix-flatpak,
+      nixos-facter-modules,
+      disko,
+      darwin,
+      nix-homebrew,
+      homebrew-bundle,
+      homebrew-core,
+      homebrew-cask,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        galago = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            nix-flatpak.nixosModules.nix-flatpak
+            nixos-facter-modules.nixosModules.facter
+            {
+              config.facter.reportPath =
+                if builtins.pathExists ./modules/facter/galago.json then
+                  ./modules/facter/galago.json
+                else
+                  throw "Have you forgotten to run nixos-anywhere with `--generate-hardware-config nixos-facter ./facter.json`?";
+            }
+            disko.nixosModules.disko
+            ./systems/nixos/galago.nix
+          ];
+        };
       };
-    };
 
-    darwinConfigurations = {
-      m1 = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        pkgs = import nixpkgs {system = "aarch64-darwin";};
-        modules = [
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              enableRosetta = true;
-              user = "iris";
-              taps = {
-                "homebrew/homebrew-core" = inputs.homebrew-core;
-                "homebrew/homebrew-cask" = inputs.homebrew-cask;
-                "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+      darwinConfigurations = {
+        m1 = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          pkgs = import nixpkgs { system = "aarch64-darwin"; };
+          modules = [
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                enableRosetta = true;
+                user = "iris";
+                taps = {
+                  "homebrew/homebrew-core" = inputs.homebrew-core;
+                  "homebrew/homebrew-cask" = inputs.homebrew-cask;
+                  "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+                };
+
+                # Enable fully-declarative tap management
+                # Taps can no longer be added imperatively with `brew tap`
+                mutableTaps = false;
               };
-
-              # Enable fully-declarative tap management
-              # Taps can no longer be added imperatively with `brew tap`
-              mutableTaps = false;
-            };
-          }
-          ./systems/darwin
-        ];
+            }
+            ./systems/darwin
+          ];
+        };
       };
     };
-  };
 }

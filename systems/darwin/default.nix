@@ -3,8 +3,9 @@
   pkgs,
   config,
   ...
-}: {
-  imports = [../commons.nix];
+}:
+{
+  imports = [ ../commons.nix ];
 
   networking.hostName = "m1";
 
@@ -32,7 +33,7 @@
   };
 
   environment = {
-    shells = with pkgs; [bash];
+    shells = with pkgs; [ bash ];
     systemPackages = with pkgs; [
       coreutils
       gcc
@@ -50,12 +51,12 @@
       jankyborders
     ];
 
-    systemPath = ["/opt/homebrew/bin"];
-    pathsToLink = ["/Applications"];
+    systemPath = [ "/opt/homebrew/bin" ];
+    pathsToLink = [ "/Applications" ];
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["Hack"];})
+    (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
 
   services = {
@@ -171,7 +172,7 @@
     enable = true;
     caskArgs.no_quarantine = true;
     global.brewfile = true;
-    masApps = {};
+    masApps = { };
     casks = [
       "firefox"
       "thunderbird"

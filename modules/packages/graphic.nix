@@ -2,8 +2,9 @@
   pkgs,
   inputs,
   ...
-}: {
-  imports = [./commons.nix];
+}:
+{
+  imports = [ ./commons.nix ];
 
   environment.systemPackages = with pkgs; [
     emacs-git
@@ -63,6 +64,6 @@
     enable = true;
     update.onActivation = true;
     uninstallUnmanaged = true;
-    packages = [];
+    packages = [ ];
   };
 }

@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ../commons.nix
     ../../modules/packages/graphic.nix

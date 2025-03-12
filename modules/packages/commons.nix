@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # Bootloader
   boot = {
     kernelPackages = pkgs.linuxPackages_testing;
@@ -61,9 +62,11 @@
     };
 
     overlays = [
-      (import (builtins.fetchTarball {
-        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-      }))
+      (import (
+        builtins.fetchTarball {
+          url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+        }
+      ))
     ];
   };
 
@@ -112,7 +115,7 @@
     keyd = {
       enable = true;
       keyboards.default = {
-        ids = ["*"];
+        ids = [ "*" ];
         settings = {
           main = {
             capslock = "layer(nav)";
@@ -147,7 +150,11 @@
   users.users.yiyu = {
     isNormalUser = true;
     description = "Yiyu Zhou";
-    extraGroups = ["wheel" "video" "networkmanager"];
+    extraGroups = [
+      "wheel"
+      "video"
+      "networkmanager"
+    ];
   };
 
   # List packages installed in system profile. To search, run:

@@ -1,4 +1,5 @@
-{pkgs, ...}: {
-  imports = [./commons.nix];
-  environment.systemPackages = with pkgs; [emacs-git-nox];
+{ pkgs, ... }:
+{
+  imports = [ ./commons.nix ];
+  environment.systemPackages = with pkgs; [ emacs-git-nox ];
 }
