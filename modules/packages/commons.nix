@@ -155,13 +155,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    man-pages
-    man-pages-posix
-    linux-manual
-
-    nixos-anywhere
-    nixos-facter
-
     wget
     stow
     tree
@@ -181,6 +174,15 @@
     readline
     git
     jujutsu
+
+    # manuals
+    man-pages
+    man-pages-posix
+    linux-manual
+
+    # NixOS
+    nixos-anywhere
+    nixos-facter
 
     # Bash
     bash-language-server
