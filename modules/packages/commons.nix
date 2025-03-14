@@ -228,6 +228,7 @@
 
     # Java
     temurin-bin # OpenJDK
+    jdt-language-server
 
     # SQL
     sqlite
