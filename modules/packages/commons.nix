@@ -212,6 +212,9 @@
     # Common Lisp
     sbcl
 
+    # Scheme
+    akkuPackages.scheme-langserver
+
     # Python
     rustpython
     uv
