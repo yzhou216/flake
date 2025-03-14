@@ -164,7 +164,6 @@
 
     universal-ctags
     cscope
-    ispell
 
     gcc
     gdb
@@ -174,6 +173,10 @@
     readline
     git
     jujutsu
+
+    # spell checker
+    aspell
+    aspellDicts.en
 
     # manuals
     man-pages
