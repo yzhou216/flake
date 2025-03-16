@@ -230,6 +230,9 @@
     temurin-bin # OpenJDK
     jdt-language-server
 
+    # WWW
+    vscode-langservers-extracted
+
     # SQL
     sqlite
     sqls
