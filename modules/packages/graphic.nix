@@ -17,6 +17,7 @@
     nyxt
     inputs.zen-browser.packages."${system}".default # beta
     tor-browser
+    mpv
     fragments
     signal-desktop
     gurk-rs
