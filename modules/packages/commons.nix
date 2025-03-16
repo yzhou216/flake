@@ -156,6 +156,7 @@
     tree
     unzip
     sshfs
+    dumbpipe
     miniserve
 
     universal-ctags
