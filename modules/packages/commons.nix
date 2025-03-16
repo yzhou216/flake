@@ -104,7 +104,7 @@
 
     tailscale = {
       enable = true;
-      useRoutingFeatures = "client";
+      useRoutingFeatures = "both";
       extraUpFlags = [
         "--advertise-exit-node"
         "--exit-node-allow-lan-access"
