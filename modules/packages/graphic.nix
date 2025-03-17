@@ -42,7 +42,6 @@
         slurp
         wl-clipboard-rs
         swayidle
-        swaylock
         warpd
       ];
     };
@@ -58,10 +57,13 @@
     steam.enable = true;
   };
 
-  services.flatpak = {
-    enable = true;
-    update.onActivation = true;
-    uninstallUnmanaged = true;
-    packages = [ ];
+  services = {
+    wlock.enable = true;
+    flatpak = {
+      enable = true;
+      update.onActivation = true;
+      uninstallUnmanaged = true;
+      packages = [ ];
+    };
   };
 }
