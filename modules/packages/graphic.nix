@@ -50,11 +50,7 @@
     foot = {
       enable = true;
       theme = "modus-vivendi";
-      settings = {
-        main = {
-          font = "monospace:size=14";
-        };
-      };
+      settings.main.font = "monospace:size=14";
     };
 
     thunderbird.enable = true;
