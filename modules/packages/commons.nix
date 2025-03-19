@@ -153,6 +153,7 @@
   environment.systemPackages = with pkgs; [
     wget
     stow
+    ffmpeg
     tree
     unzip
     sshfs
