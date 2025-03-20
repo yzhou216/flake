@@ -2,8 +2,8 @@
 {
   imports = [
     ../commons.nix
-    ../../modules/packages/graphic.nix
-    ../../modules/disko/bcachefs.nix
+    ../../systems/graphic.nix
+    ../../disko/bcachefs.nix
   ];
 
   hardware.system76.enableAll = true;

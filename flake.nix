@@ -61,13 +61,13 @@
             nixos-facter-modules.nixosModules.facter
             {
               config.facter.reportPath =
-                if builtins.pathExists ./modules/facter/galago.json then
-                  ./modules/facter/galago.json
+                if builtins.pathExists ./machines/nixos/facter/galago.json then
+                  ./machines/nixos/facter/galago.json
                 else
                   throw "Have you forgotten to run nixos-anywhere with `--generate-hardware-config nixos-facter ./facter.json`?";
             }
             disko.nixosModules.disko
-            ./systems/nixos/galago.nix
+            ./machines/nixos/galago.nix
           ];
         };
       };
@@ -94,7 +94,7 @@
                 mutableTaps = false;
               };
             }
-            ./systems/darwin
+            ./machines/darwin
           ];
         };
       };
