@@ -245,6 +245,12 @@
   ];
 
   programs = {
+    # GNU Privacy Guard
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+
     vim.enable = true;
     neovim.enable = true;
     tmux.enable = true;
@@ -262,10 +268,6 @@
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;
-    # gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
 
     # Remove new line character from default prompt PS1
     bash.promptInit = ''
