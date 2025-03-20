@@ -213,6 +213,9 @@
     # Scheme
     akkuPackages.scheme-langserver
 
+    # Racket
+    racket
+
     # Python
     rustpython
     uv
