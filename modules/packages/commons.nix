@@ -205,16 +205,12 @@
     delve
     gofumpt
     golines
+
+    # Lisp
     guile
-
-    # Common Lisp
-    sbcl
-
-    # Scheme
     akkuPackages.scheme-langserver
-
-    # Racket
     racket
+    sbcl
 
     # Python
     rustpython
