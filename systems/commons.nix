@@ -151,30 +151,36 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
+    readline
     stow
-    ffmpeg
     tree
     unzip
+    ffmpeg
+
+    # network
+    wget
     sshfs
     dumbpipe
     miniserve
 
-    universal-ctags
-    cscope
-
-    gcc
-    gdb
-    gnumake
-    cmake
-    libtool
-    readline
+    # version control
     git
     jujutsu
 
     # spell checker
     aspell
     aspellDicts.en
+
+    # source code tagging
+    universal-ctags
+    cscope
+
+    # toolchain
+    gcc
+    gdb
+    gnumake
+    cmake
+    libtool
 
     # manuals
     man-pages
