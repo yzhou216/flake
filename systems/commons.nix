@@ -15,7 +15,7 @@
     wireless.iwd = {
       enable = true;
       settings = {
-        General.AddressRandomization = true;
+        General.AddressRandomization = "once";
         IPv6.Enabled = true;
         Settings.AutoConnect = true;
       };
