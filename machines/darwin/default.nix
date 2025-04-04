@@ -5,7 +5,10 @@
   ...
 }:
 {
-  imports = [ ../commons.nix ];
+  imports = [
+    ./state-version.nix
+    ../commons.nix
+  ];
 
   networking.hostName = "m1";
 
@@ -70,9 +73,6 @@
   };
 
   system = {
-    # backwards compat; **DO NOT CHANGE!!**
-    stateVersion = 4;
-
     # Add aliases for programs in Nix store
     activationScripts.postUserActivation.text = ''
       app_folder="$HOME/Applications/Nix Trampolines"

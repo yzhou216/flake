@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./state-version.nix
     ../commons.nix
     ../../systems/graphic.nix
     ../../disko/bcachefs.nix
