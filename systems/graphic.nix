@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [ ./commons.nix ];
 
@@ -15,7 +11,7 @@
     lutris
 
     nyxt
-    inputs.zen-browser.packages."${system}".default # beta
+    librewolf
     tor-browser
     mpv
     fragments
