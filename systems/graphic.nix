@@ -53,6 +53,10 @@
     };
 
     thunderbird.enable = true;
+    obs-studio = {
+      enable = true;
+      plugins = [ pkgs.obs-studio-plugins.wlrobs ];
+    };
     kdeconnect.enable = true;
     steam.enable = true;
   };
