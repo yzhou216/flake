@@ -2,29 +2,9 @@
 {
   imports = [ ./commons.nix ];
 
-  environment.systemPackages = with pkgs; [
-    emacs-git
-    tdf
-    digital
-    musescore
-    libreoffice
-    lutris
-
-    nyxt
-    tor-browser
-    ente-auth
-    mpv
-    ff2mpv-rust
-    fragments
-    signal-desktop
-    gurk-rs
-
-    # Theming
-    adwaita-icon-theme
-    gnome-themes-extra
-    libsForQt5.qt5ct
-    qt6ct
-  ];
+  environment.systemPackages =
+    builtins.map (packageName: pkgs.${packageName})
+      (builtins.fromTOML (builtins.readFile ./packages.toml)).graphic;
 
   programs = {
     river = {

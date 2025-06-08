@@ -1,0 +1,23 @@
+graphic = [
+  "emacs-git",
+  "tdf",
+  "digital",
+  "musescore",
+  "libreoffice",
+  "lutris",
+
+  "nyxt",
+  "tor-browser",
+  "ente-auth",
+  "mpv",
+  "ff2mpv-rust",
+  "fragments",
+  "signal-desktop",
+  "gurk-rs",
+
+  # Theming
+  "adwaita-icon-theme",
+  "gnome-themes-extra",
+  #"libsForQt5.qt5ct",
+  "qt6ct"
+] 
