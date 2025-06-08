@@ -13,6 +13,7 @@
     nyxt
     librewolf
     tor-browser
+    ente-auth
     mpv
     fragments
     signal-desktop
@@ -59,6 +60,7 @@
 
   services = {
     wlock.enable = true;
+    gnome.gnome-keyring.enable = true; # Required by Ente Auth
     flatpak = {
       enable = true;
       update.onActivation = true;
