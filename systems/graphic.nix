@@ -15,6 +15,7 @@
     tor-browser
     ente-auth
     mpv
+    ff2mpv-rust
     fragments
     signal-desktop
     gurk-rs
