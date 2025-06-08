@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 {
   # Bootloader
   boot = {
@@ -10,7 +14,7 @@
   };
 
   networking = {
-    # Use iwd as the WiFi backend for NetworkManager
+    # Use iwd as the IEEE 802.11 backend for NetworkManager
     networkmanager.wifi.backend = "iwd";
     wireless.iwd = {
       enable = true;
@@ -26,14 +30,14 @@
     firewall = {
       enable = true;
       package = pkgs.nftables;
-      # Open ports in the firewall.
-      # allowedTCPPorts = [ ... ];
-      # allowedUDPPorts = [ ... ];
+      # Open ports in the firewall
+      #allowedTCPPorts = [ ... ];
+      #allowedUDPPorts = [ ... ];
     };
 
     # Network proxy
-    # proxy.default = "http://user:password@proxy:port/";
-    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    #proxy.default = "http://user:password@proxy:port/";
+    #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
 
   time.timeZone = "America/Los_Angeles";
@@ -41,18 +45,17 @@
   # Internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
-
-    extraLocaleSettings = {
-      LC_ADDRESS = "en_US.UTF-8";
-      LC_IDENTIFICATION = "en_US.UTF-8";
-      LC_MEASUREMENT = "en_US.UTF-8";
-      LC_MONETARY = "en_US.UTF-8";
-      LC_NAME = "en_US.UTF-8";
-      LC_NUMERIC = "en_US.UTF-8";
-      LC_PAPER = "en_US.UTF-8";
-      LC_TELEPHONE = "en_US.UTF-8";
-      LC_TIME = "en_US.UTF-8";
-    };
+    extraLocaleSettings = lib.genAttrs [
+      "LC_ADDRESS"
+      "LC_IDENTIFICATION"
+      "LC_MEASUREMENT"
+      "LC_MONETARY"
+      "LC_NAME"
+      "LC_NUMERIC"
+      "LC_PAPER"
+      "LC_TELEPHONE"
+      "LC_TIME"
+    ] (locale: "en_US.UTF-8");
   };
 
   nixpkgs = {
@@ -76,25 +79,23 @@
     pipewire = {
       enable = true;
       pulse.enable = true;
+      wireplumber.enable = true;
       alsa = {
         enable = true;
         support32Bit = true;
       };
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
 
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
+      # JACK applications
+      #jack.enable = true;
     };
 
-    # Enable CUPS to print documents.
+    # Common UNIX Printing System
     printing.enable = true;
 
-    # Enable the OpenSSH daemon.
+    # OpenSSH daemon
     openssh.enable = true;
 
-    # Enable touchpad support (enabled default in most desktopManager).
+    # Touchpad support (enabled default in most desktopManager)
     libinput.enable = true;
 
     guix = {
@@ -148,8 +149,6 @@
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     readline
     stow
@@ -271,9 +270,11 @@
       };
     };
 
-    # Some programs need SUID wrappers, can be configured further or are
-    # started in user sessions.
-    # mtr.enable = true;
+    /*
+      Some programs need SUID wrappers, can be configured further or
+      are started in user sessions.
+    */
+    #mtr.enable = true;
 
     # Remove new line character from default prompt PS1
     bash.promptInit = ''

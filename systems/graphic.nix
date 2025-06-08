@@ -11,7 +11,6 @@
     lutris
 
     nyxt
-    librewolf
     tor-browser
     ente-auth
     mpv
@@ -50,10 +49,15 @@
       settings.main.font = "monospace:size=14";
     };
 
+    firefox = {
+      enable = true;
+      package = pkgs.librewolf;
+    };
+
     thunderbird.enable = true;
     obs-studio = {
       enable = true;
-      plugins = [ pkgs.obs-studio-plugins.wlrobs ];
+      plugins = with pkgs.obs-studio-plugins; [ wlrobs ];
     };
     kdeconnect.enable = true;
     steam.enable = true;
