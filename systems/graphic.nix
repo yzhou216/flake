@@ -11,7 +11,6 @@
     lutris
 
     nyxt
-    librewolf
     tor-browser
     ente-auth
     mpv
@@ -48,6 +47,11 @@
       enable = true;
       theme = "modus-vivendi";
       settings.main.font = "monospace:size=14";
+    };
+
+    firefox = {
+      enable = true;
+      package = pkgs.librewolf;
     };
 
     thunderbird.enable = true;
