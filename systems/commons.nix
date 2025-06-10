@@ -163,7 +163,6 @@
     miniserve
 
     # version control
-    git
     jujutsu
 
     # spell checker
@@ -254,6 +253,11 @@
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
+    };
+
+    git = {
+      enable = true;
+      lfs.enable = true;
     };
 
     vim.enable = true;
