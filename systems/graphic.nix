@@ -11,7 +11,7 @@
     lutris
 
     nyxt
-    tor-browser
+    tor-browser-bundle-bin
     ente-auth
     mpv
     ff2mpv-rust
