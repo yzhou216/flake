@@ -153,7 +153,6 @@
     readline
     stow
     tree
-    unzip
     zstd
     ffmpeg
 
