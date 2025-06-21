@@ -154,6 +154,7 @@
     stow
     tree
     unzip
+    zstd
     ffmpeg
 
     # network
