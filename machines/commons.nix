@@ -6,6 +6,7 @@
     settings = {
       experimental-features = "nix-command flakes repl-flake";
       nix-path = "nixpkgs=flake:nixpkgs";
+      use-xdg-base-directories = true;
       auto-optimise-store = true;
       trusted-users = [
         "root"
