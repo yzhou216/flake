@@ -188,6 +188,7 @@
     # NixOS
     nixos-anywhere
     nixos-facter
+    nix-init
 
     # Bash
     bash-language-server
