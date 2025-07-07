@@ -247,6 +247,11 @@
     nil
     nixfmt-rfc-style
     devenv
+
+    # Forge clients
+    codeberg-cli
+    glab # GitLab CLI
+    gh # GitHub CLI
   ];
 
   programs = {
