@@ -190,6 +190,10 @@
     nixos-facter
     nix-init
 
+    # C
+    libclang
+    bear
+
     # Bash
     bash-language-server
     shfmt
