@@ -14,7 +14,6 @@
     tor-browser-bundle-bin
     ente-auth
     mpv
-    ff2mpv-rust
     fragments
     signal-desktop
     gurk-rs

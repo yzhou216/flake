@@ -151,7 +151,6 @@
 
   environment.systemPackages = with pkgs; [
     readline
-    stow
     tree
     zstd
     ffmpeg
