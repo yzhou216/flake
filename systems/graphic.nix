@@ -29,6 +29,7 @@
     river = {
       enable = true;
       extraPackages = with pkgs; [
+        alacritty-graphics
         pamixer
         kanshi
         yambar
@@ -40,12 +41,6 @@
         swayidle
         warpd
       ];
-    };
-
-    foot = {
-      enable = true;
-      theme = "modus-vivendi";
-      settings.main.font = "monospace:size=14";
     };
 
     firefox = {
