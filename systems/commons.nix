@@ -224,7 +224,7 @@
     rustpython
     uv
     pylyzer
-    python313Packages.debugpy
+    python3.pkgs.debugpy
 
     # Haskell
     ihaskell # bin/ghci
