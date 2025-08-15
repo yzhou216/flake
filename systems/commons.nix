@@ -153,6 +153,7 @@
     readline
     tree
     zstd
+    skim
     ffmpeg
 
     # network
