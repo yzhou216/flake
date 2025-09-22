@@ -15,7 +15,7 @@
   programs = {
     bash = {
       enable = true;
-      enableCompletion = true;
+      completion.enable = true;
       interactiveShellInit = ''
         if [ "$TERM" != "dumb" ] || [ -n "$INSIDE_EMACS" ]; then
           PROMPT_COLOR="1;31m"
@@ -58,12 +58,9 @@
     pathsToLink = [ "/Applications" ];
   };
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "Hack" ]; })
-  ];
+  fonts.packages = with pkgs; [ nerd-fonts.hack ];
 
   services = {
-    nix-daemon.enable = true;
     #tailscale.enable = true; # Enable after ssh and exit node support is ready
     yabai.enable = true;
     yabai.enableScriptingAddition = true;
@@ -73,8 +70,10 @@
   };
 
   system = {
+    primaryUser = "lexi";
+
     # Add aliases for programs in Nix store
-    activationScripts.postUserActivation.text = ''
+    activationScripts.postActivation.text = ''
       app_folder="$HOME/Applications/Nix Trampolines"
       rm -rf "$app_folder"
       mkdir -p "$app_folder"
