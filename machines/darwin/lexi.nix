@@ -1,5 +1,7 @@
 { ... }:
 {
+  ids.gids.nixbld = 350; # temp
+
   imports = [
     ./state-version.nix
     ../commons.nix
