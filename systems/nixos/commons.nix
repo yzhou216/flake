@@ -4,6 +4,9 @@
   ...
 }:
 {
+
+  imports = [ ../vc.nix ];
+
   # Bootloader
   boot = {
     kernelPackages = pkgs.linuxPackages_testing;
@@ -162,9 +165,6 @@
     dumbpipe
     miniserve
 
-    # version control
-    jujutsu
-
     # spell checker
     aspell
     aspellDicts.en
@@ -251,11 +251,6 @@
     nil
     nixfmt-rfc-style
     devenv
-
-    # Forge clients
-    codeberg-cli
-    glab # GitLab CLI
-    gh # GitHub CLI
   ];
 
   programs = {

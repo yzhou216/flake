@@ -5,6 +5,8 @@
   ...
 }:
 {
+  imports = [ ../vc.nix ];
+
   programs = {
     bash = {
       enable = true;
@@ -35,7 +37,6 @@
       #gcc
       #gnumake
       emacs-macport
-      git
       #stow
       #tree
       #universal-ctags
@@ -57,9 +58,6 @@
       sshfs
       dumbpipe
       miniserve
-
-      # version control
-      jujutsu
 
       # spell checker
       aspell
@@ -147,11 +145,6 @@
       nil
       nixfmt-rfc-style
       devenv
-
-      # Forge clients
-      codeberg-cli
-      glab # GitLab CLI
-      gh # Git
 
       # graphics
       mpv
