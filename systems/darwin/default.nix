@@ -5,13 +5,6 @@
   ...
 }:
 {
-  imports = [
-    ./state-version.nix
-    ../commons.nix
-  ];
-
-  networking.hostName = "m1";
-
   programs = {
     bash = {
       enable = true;
@@ -39,19 +32,133 @@
     shells = with pkgs; [ bash ];
     systemPackages = with pkgs; [
       coreutils
-      gcc
-      gnumake
+      #gcc
+      #gnumake
       emacs-macport
       git
-      stow
+      #stow
+      #tree
+      #universal-ctags
+      #cscope
+      #python3
+      alacritty-graphics
+      neovim
+      #alejandra
+      jankyborders
+
+      readline
       tree
+      zstd
+      skim
+      ffmpeg
+
+      # network
+      wget
+      sshfs
+      dumbpipe
+      miniserve
+
+      # version control
+      jujutsu
+
+      # spell checker
+      aspell
+      aspellDicts.en
+
+      # source code tagging
       universal-ctags
       cscope
-      python3
-      alacritty
-      neovim
-      alejandra
-      jankyborders
+
+      # toolchain
+      gcc
+      gdb
+      gnumake
+      cmake
+      libtool
+
+      # manuals
+      man-pages
+      man-pages-posix
+      #linux-manual
+
+      # NixOS
+      nixos-anywhere
+      #nixos-facter
+      nix-init
+
+      # C
+      libclang
+      bear
+
+      # Bash
+      bash-language-server
+      shfmt
+
+      # TeX
+      tectonic
+      texlab
+      #lilypond-unstable-with-fonts
+
+      # Rust
+      rustup
+      bacon
+      dioxus-cli
+
+      # Go
+      go
+      gopls
+      delve
+      gofumpt
+      golines
+
+      # Lisp
+      guile
+      #akkuPackages.scheme-langserver
+      #racket
+      sbcl
+
+      # Python
+      rustpython
+      uv
+      pylyzer
+      python3.pkgs.debugpy
+
+      # Haskell
+      ihaskell # bin/ghci
+      haskellPackages.stack
+      haskellPackages.haskell-language-server
+
+      # Java
+      temurin-bin # OpenJDK
+      jdt-language-server
+
+      # WWW
+      vscode-langservers-extracted
+
+      # SQL
+      sqlite
+      sqls
+
+      # Markdown
+      glow
+      marksman
+
+      # Nix
+      nil
+      nixfmt-rfc-style
+      devenv
+
+      # Forge clients
+      codeberg-cli
+      glab # GitLab CLI
+      gh # Git
+
+      # graphics
+      mpv
+      gurk-rs
+      tdf
+      digital
+      musescore
     ];
 
     systemPath = [ "/opt/homebrew/bin" ];
@@ -70,8 +177,6 @@
   };
 
   system = {
-    primaryUser = "lexi";
-
     # Add aliases for programs in Nix store
     activationScripts.postActivation.text = ''
       app_folder="$HOME/Applications/Nix Trampolines"

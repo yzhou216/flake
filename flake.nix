@@ -70,7 +70,7 @@
       };
 
       darwinConfigurations = {
-        m1 = darwin.lib.darwinSystem {
+        iris = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
@@ -90,11 +90,11 @@
                 mutableTaps = false;
               };
             }
-            ./machines/darwin
+            ./machines/darwin/iris.nix
           ];
         };
 
-        air = darwin.lib.darwinSystem {
+        lexi = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
@@ -114,7 +114,7 @@
                 mutableTaps = false;
               };
             }
-            ./machines/darwin
+            ./machines/darwin/lexi.nix
           ];
         };
       };

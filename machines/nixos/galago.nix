@@ -3,7 +3,7 @@
   imports = [
     ./state-version.nix
     ../commons.nix
-    ../../systems/graphic.nix
+    ../../systems/nixos/graphic.nix
     ../../disko/bcachefs.nix
   ];
 
