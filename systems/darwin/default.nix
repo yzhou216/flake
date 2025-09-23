@@ -70,7 +70,6 @@
     yabai.enableScriptingAddition = true;
     skhd.enable = true;
     sketchybar.enable = true;
-    karabiner-elements.enable = true;
   };
 
   system = {
