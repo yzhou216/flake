@@ -10,6 +10,7 @@
     ../dev.nix
     ../vc.nix
     ../editors.nix
+    ../man.nix
   ];
 
   # Bootloader
@@ -211,14 +212,5 @@
       are started in user sessions.
     */
     #mtr.enable = true;
-  };
-
-  documentation = {
-    enable = true;
-    man = {
-      enable = true;
-      generateCaches = true;
-    };
-    dev.enable = true;
   };
 }

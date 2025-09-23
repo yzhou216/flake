@@ -10,6 +10,7 @@
     ../dev.nix
     ../vc.nix
     ../editors.nix
+    ../man.nix
   ];
 
   programs.tmux.enable = true;
