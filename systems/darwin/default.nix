@@ -49,6 +49,7 @@
       #lilypond-unstable-with-fonts
 
       # graphics
+      firefox
       mpv
       gurk-rs
       tdf
@@ -160,7 +161,6 @@
     global.brewfile = true;
     masApps = { };
     casks = [
-      "firefox"
       "thunderbird"
       "libreoffice"
       "scroll-reverser"
