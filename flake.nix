@@ -72,7 +72,6 @@
       darwinConfigurations = {
         m1 = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          pkgs = import nixpkgs { system = "aarch64-darwin"; };
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
             {
@@ -97,7 +96,6 @@
 
         air = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          pkgs = import nixpkgs { system = "aarch64-darwin"; };
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
             {
