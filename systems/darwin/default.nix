@@ -65,7 +65,7 @@
 
   services = {
     emacs.package = pkgs.emacs-macport;
-    #tailscale.enable = true; # Enable after ssh and exit node support is ready
+    tailscale.enable = true;
     yabai.enable = true;
     yabai.enableScriptingAddition = true;
     skhd.enable = true;
@@ -178,7 +178,6 @@
       "firefox"
       "thunderbird"
       "libreoffice"
-      "tailscale" # Temporary solution
       "scroll-reverser"
       "discretescroll"
       "swift-quit"
