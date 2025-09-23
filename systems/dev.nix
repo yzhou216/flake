@@ -41,7 +41,7 @@
 
     # Lisp
     guile
-    akkuPackages.scheme-langserver
+    # akkuPackages.scheme-langserver # broken
     racket
     sbcl
 
