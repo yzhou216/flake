@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ../nixpkgs.nix
     ../bash.nix
     ../vc.nix
     ../editors.nix

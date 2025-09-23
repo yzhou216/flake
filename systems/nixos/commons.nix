@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ../nixpkgs.nix
     ../bash.nix
     ../vc.nix
     ../editors.nix
@@ -64,20 +65,13 @@
     ] (locale: "en_US.UTF-8");
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true; # Allow unfree packages
-      allowBroken = true; # Allow broken packages
-    };
-
-    overlays = [
-      (import (
-        builtins.fetchTarball {
-          url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-        }
-      ))
-    ];
-  };
+  nixpkgs.overlays = [
+    (import (
+      builtins.fetchTarball {
+        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+      }
+    ))
+  ];
 
   services = {
     # Enable sound with pipewire.
