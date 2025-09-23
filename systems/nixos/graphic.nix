@@ -3,7 +3,6 @@
   imports = [ ./commons.nix ];
 
   environment.systemPackages = with pkgs; [
-    emacs-git
     tdf
     digital
     musescore
@@ -58,6 +57,7 @@
   };
 
   services = {
+    emacs.package = pkgs.emacs-git;
     wlock.enable = true;
     gnome.gnome-keyring.enable = true; # Required by Ente Auth
     flatpak = {

@@ -7,6 +7,7 @@
   imports = [
     ../bash.nix
     ../vc.nix
+    ../editors.nix
   ];
 
   # Bootloader
@@ -267,7 +268,6 @@
       lfs.enable = true;
     };
 
-    vim.enable = true;
     neovim.enable = true;
     tmux.enable = true;
     htop.enable = true;

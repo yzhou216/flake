@@ -8,6 +8,7 @@
   imports = [
     ../bash.nix
     ../vc.nix
+    ../editors.nix
   ];
 
   programs.tmux.enable = true;
@@ -18,7 +19,6 @@
       coreutils
       emacs-macport
       alacritty-graphics
-      neovim
       jankyborders
 
       readline
@@ -135,6 +135,7 @@
   fonts.packages = with pkgs; [ nerd-fonts.hack ];
 
   services = {
+    emacs.package = pkgs.emacs-macport;
     #tailscale.enable = true; # Enable after ssh and exit node support is ready
     yabai.enable = true;
     yabai.enableScriptingAddition = true;
