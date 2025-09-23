@@ -32,6 +32,8 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
   outputs =
@@ -46,6 +48,7 @@
       homebrew-bundle,
       homebrew-core,
       homebrew-cask,
+      mac-app-util,
       ...
     }@inputs:
     {
@@ -73,6 +76,7 @@
         iris = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
+            mac-app-util.darwinModules.default
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
@@ -97,6 +101,7 @@
         lexi = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
+            mac-app-util.darwinModules.default
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
