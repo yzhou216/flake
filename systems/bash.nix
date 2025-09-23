@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }:
 let
@@ -13,7 +14,7 @@ let
         # Emacs term mode doesn't support xterm title escape sequence (\e]0;)
         PS1="\[\033[$PROMPT_COLOR\][\u@\h:\w]\\$\[\033[0m\] "
       else
-        PS1='\[\033[$PROMPT_COLOR\][\[\e]0;\u@\h: \w\a\]\u@\h:\w$(source ${pkgs.git}/share/bash-completion/completions/git-prompt.sh; __git_ps1 " (%s)")]\\$\[\033[0m\] '
+        PS1='\[\033[$PROMPT_COLOR\][\[\e]0;\u@\h: \w\a\]\u@\h:\w$(source ${lib.getBin pkgs.git}/share/bash-completion/completions/git-prompt.sh; __git_ps1 " (%s)")]\\$\[\033[0m\] '
       fi
       if test "$TERM" = "xterm"; then
         PS1="\[\033]2;\h:\u:\w\007\]$PS1"
