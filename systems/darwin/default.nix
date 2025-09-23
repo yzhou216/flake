@@ -50,6 +50,7 @@
 
       # graphics
       firefox
+      thunderbird
       mpv
       gurk-rs
       tdf
@@ -161,7 +162,6 @@
     global.brewfile = true;
     masApps = { };
     casks = [
-      "thunderbird"
       "libreoffice"
       "scroll-reverser"
       "discretescroll"
