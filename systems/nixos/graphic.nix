@@ -10,7 +10,7 @@
     lutris
 
     nyxt
-    tor-browser-bundle-bin
+    tor-browser
     ente-auth
     mpv
     fragments
@@ -21,7 +21,7 @@
     adwaita-icon-theme
     gnome-themes-extra
     libsForQt5.qt5ct
-    qt6ct
+    qt6Packages.qt6ct
   ];
 
   programs = {
