@@ -76,19 +76,9 @@
   ];
 
   services = {
-    # Enable sound with pipewire.
-    pulseaudio.enable = false;
-    pipewire = {
+    pipewire.alsa = {
       enable = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-
-      # JACK applications
-      #jack.enable = true;
+      support32Bit = true;
     };
 
     # Common UNIX Printing System
