@@ -32,7 +32,7 @@
         pamixer
         kanshi
         yambar
-        wofi
+        wmenu
         fnott
         wayshot
         slurp
