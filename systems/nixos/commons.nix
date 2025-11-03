@@ -125,7 +125,16 @@
     # Use sudo-rs and doas instead of sudo
     sudo.enable = false;
     sudo-rs.enable = true;
-    doas.enable = true;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          groups = [ "wheel" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
 
     rtkit.enable = true;
   };
