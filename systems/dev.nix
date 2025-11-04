@@ -75,5 +75,6 @@
     nil
     nixfmt-rfc-style
     devenv
+    nix-init
   ];
 }

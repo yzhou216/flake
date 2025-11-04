@@ -173,7 +173,6 @@
     # NixOS
     nixos-anywhere
     nixos-facter
-    nix-init
 
     # TeX
     tectonic
