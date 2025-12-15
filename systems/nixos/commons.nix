@@ -6,11 +6,11 @@
 {
   imports = [
     ../nixpkgs.nix
-    ../bash.nix
-    ../dev.nix
-    ../vc.nix
-    ../editors.nix
-    ../man.nix
+    #../bash.nix
+    #../dev.nix
+    #../vc.nix
+    #../editors.nix
+    #../man.nix
   ];
 
   # Bootloader
@@ -67,13 +67,13 @@
     ] (locale: "en_US.UTF-8");
   };
 
-  nixpkgs.overlays = [
-    (import (
-      builtins.fetchTarball {
-        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-      }
-    ))
-  ];
+  #nixpkgs.overlays = [
+  #  (import (
+  #    builtins.fetchTarball {
+  #      url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+  #    }
+  #  ))
+  #];
 
   services = {
     pipewire.alsa = {
