@@ -29,23 +29,52 @@
             name = "root";
             size = "100%";
             content = {
-              type = "filesystem";
-              format = "bcachefs";
-              mountOptions = [
-                "noatime"
-                "compression=zstd"
-                "background_compression=zstd"
-                "discard"
-              ];
-              mountpoint = "/";
-              # TODO: subvolumes not yet supported by disko
-              # subvolumes = {
-              #   "/home" = {};
-              #   "/nix" = {};
-              # };
+              type = "bcachefs";
+              filesystem = "mounted_subvolumes";
+              label = "group_a.root";
             };
           };
         };
+      };
+    };
+
+    bcachefs_filesystems.mounted_subvolumes = {
+      type = "bcachefs_filesystem";
+      extraFormatArgs = [
+        "--compression=zstd"
+        "--background_compression=zstd"
+      ];
+
+      subvolumes = {
+        "@" = {
+          mountpoint = "/";
+          mountOptions = [
+            "verbose"
+            "noatime"
+            "discard"
+          ];
+        };
+
+        "@nix" = {
+          mountpoint = "/nix";
+          mountOptions = [
+            "noatime"
+            "discard"
+          ];
+        };
+
+        "@home" = {
+          mountpoint = "/home";
+          mountOptions = [
+            "noatime"
+            "discard"
+          ];
+        };
+
+        "@home/yiyu".mountOptions = [
+          "noatime"
+          "discard"
+        ];
       };
     };
   };
