@@ -73,7 +73,7 @@
 
     # Nix
     nil
-    nixfmt-rfc-style
+    nixfmt
     devenv
     nix-init
   ];
