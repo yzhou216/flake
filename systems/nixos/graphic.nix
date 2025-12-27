@@ -11,7 +11,6 @@
 
     nyxt
     tor-browser
-    ente-auth
     mpv
     fragments
     signal-desktop
@@ -52,6 +51,7 @@
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [ wlrobs ];
     };
+    ente-auth.enable = true;
     kdeconnect.enable = true;
     steam.enable = true;
   };
@@ -59,7 +59,6 @@
   services = {
     emacs.package = pkgs.emacs-git;
     wlock.enable = true;
-    gnome.gnome-keyring.enable = true; # Required by Ente Auth
     flatpak = {
       enable = true;
       update.onActivation = true;
