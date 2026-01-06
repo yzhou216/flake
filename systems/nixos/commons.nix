@@ -51,8 +51,6 @@
     #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
 
-  time.timeZone = "America/Los_Angeles";
-
   # Internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -78,6 +76,8 @@
   ];
 
   services = {
+    automatic-timezoned.enable = true;
+
     pipewire.alsa = {
       enable = true;
       support32Bit = true;
