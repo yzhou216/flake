@@ -22,6 +22,8 @@
     };
   };
 
+  zramSwap.enable = true;
+
   networking = {
     # Use iwd as the IEEE 802.11 backend for NetworkManager
     networkmanager.wifi.backend = "iwd";
