@@ -24,16 +24,20 @@ let
   inherit (pkgs) stdenv;
 in
 {
-  programs.bash = {
-    enable = true;
-    completion.enable = true;
-  }
-  // (
-    if stdenv.isLinux then
-      { promptInit = bashPrompt; }
-    else if stdenv.isDarwin then
-      { interactiveShellInit = bashPrompt; }
-    else
-      { }
-  );
+  programs = {
+    bash = {
+      enable = true;
+      completion.enable = true;
+    }
+    // (
+      if stdenv.isLinux then
+        { promptInit = bashPrompt; }
+      else if stdenv.isDarwin then
+        { interactiveShellInit = bashPrompt; }
+      else
+        { }
+    );
+
+    direnv.enable = true;
+  };
 }
