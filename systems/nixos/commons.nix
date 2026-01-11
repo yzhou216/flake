@@ -6,7 +6,7 @@
 {
   imports = [
     ../nixpkgs.nix
-    ../bash.nix
+    ../shell.nix
     ../dev.nix
     ../vc.nix
     ../editors.nix
@@ -197,7 +197,6 @@
     neovim.enable = true;
     tmux.enable = true;
     htop.enable = true;
-    direnv.enable = true;
     nh = {
       enable = true;
       flake = "/home/yiyu/.config/flake";
