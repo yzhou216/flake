@@ -38,6 +38,10 @@ in
         { }
     );
 
-    direnv.enable = true;
+    direnv = {
+      enable = true;
+      silent = true;
+      nix-direnv.enable = true;
+    };
   };
 }
