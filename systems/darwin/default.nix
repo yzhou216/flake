@@ -57,6 +57,7 @@
       tdf
       digital
       musescore
+      swift-quit
     ];
 
     systemPath = [ "/opt/homebrew/bin" ];
@@ -166,7 +167,6 @@
       "libreoffice"
       "scroll-reverser"
       "discretescroll"
-      "swift-quit"
       "signal"
       "steam"
     ];
