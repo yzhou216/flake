@@ -196,7 +196,12 @@
 
     neovim.enable = true;
     tmux.enable = true;
-    htop.enable = true;
+
+    htop = {
+      enable = true;
+      settings.show_program_path = false;
+    };
+
     nh = {
       enable = true;
       flake = "/home/yiyu/.config/flake";
