@@ -37,6 +37,7 @@
         slurp
         wl-clipboard-rs
         swayidle
+        wayland-pipewire-idle-inhibit
         warpd
       ];
     };
