@@ -70,7 +70,88 @@
             ./machines/nixos/galago.nix
           ];
         };
+
+        # nix build .#nixosConfigurations.bcachefs-iso.config.system.build.isoImage
+        bcachefs-iso = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix"
+            (
+              {
+                lib,
+                pkgs,
+                ...
+              }:
+              {
+                boot.supportedFilesystems.bcachefs = true;
+                isoImage.squashfsCompression = "zstd";
+                zramSwap.enable = true;
+
+                nix = {
+                  package = pkgs.lix;
+                  channel.enable = false;
+                  settings = {
+                    experimental-features = "nix-command flakes";
+                    nix-path = "nixpkgs=flake:nixpkgs";
+                    use-xdg-base-directories = true;
+                    auto-optimise-store = true;
+                  };
+                };
+
+                services = {
+                  openssh.enable = true;
+                  desktopManager.cosmic.enable = true;
+                  displayManager.cosmic-greeter.enable = true;
+                };
+
+                programs = {
+                  git.enable = true;
+                  neovim.enable = true;
+                  tmux.enable = true;
+
+                  htop = {
+                    enable = true;
+                    settings.show_program_path = false;
+                  };
+
+                  firefox = {
+                    enable = true;
+                    package = pkgs.librewolf;
+                  };
+                };
+
+                networking = {
+                  networkmanager.wifi.backend = "iwd";
+                  wireless.iwd = {
+                    enable = true;
+                    settings = {
+                      IPv6.Enabled = true;
+                      Settings.AutoConnect = true;
+                    };
+                  };
+                };
+
+                environment.systemPackages = with pkgs; [
+                  bcachefs-tools
+                  disko
+                  dumbpipe
+                  nixos-anywhere
+                  nixos-facter
+                  sendme
+                  skim
+                  tree
+                  wget
+                  zstd
+                ];
+              }
+            )
+          ];
+        };
       };
+
+      # nix build .#bcachefs-iso
+      packages.x86_64-linux.bcachefs-iso =
+        self.nixosConfigurations.bcachefs-iso.config.system.build.isoImage;
 
       darwinConfigurations = {
         iris = darwin.lib.darwinSystem {
