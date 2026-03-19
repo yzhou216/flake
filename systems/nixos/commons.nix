@@ -73,6 +73,23 @@
         url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
       }
     ))
+
+    (final: prev: {
+      emacs-git = prev.emacs-git.overrideAttrs (
+        _: _: {
+          src = builtins.fetchGit {
+            url = "https://github.com/emacsmirror/emacs.git";
+            ref = "master";
+          };
+        }
+      );
+
+      emacs-unstable = prev.emacs-unstable.overrideAttrs (
+        _: _: {
+          src = final.emacs-git.src;
+        }
+      );
+    })
   ];
 
   services = {
