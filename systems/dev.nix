@@ -4,6 +4,9 @@
 }:
 {
   environment.systemPackages = with pkgs; [
+    # syntax highlighting (for less)
+    sourceHighlight
+
     # source code tagging
     universal-ctags
     cscope
