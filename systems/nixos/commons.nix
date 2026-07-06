@@ -197,6 +197,7 @@
     tectonic
     texlab
     lilypond-unstable-with-fonts
+    pandoc
   ];
 
   programs = {
