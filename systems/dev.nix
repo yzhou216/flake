@@ -47,6 +47,7 @@
     # akkuPackages.scheme-langserver # broken
     racket
     sbcl
+    steel
 
     # Python
     rustpython
