@@ -193,7 +193,7 @@
     nixos-anywhere
     nixos-facter
 
-    # TeX
+    # typesetting
     tectonic
     texlab
     lilypond-unstable-with-fonts
