@@ -5,5 +5,8 @@
 {
   services.emacs.enable = true;
   programs.vim.enable = true;
-  environment.systemPackages = with pkgs; [ neovim ];
+  environment.systemPackages = with pkgs; [
+    neovim
+    steelix
+  ];
 }
