@@ -183,6 +183,7 @@
     tree
     zstd
     skim
+    herdr
     ffmpeg
 
     # network
@@ -222,7 +223,6 @@
     };
 
     neovim.enable = true;
-    tmux.enable = true;
 
     htop = {
       enable = true;
