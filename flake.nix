@@ -7,7 +7,9 @@
 
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
     disko = {
-      url = "github:nix-community/disko";
+      # TODO: revert to master once
+      # https://github.com/nix-community/disko/pull/1277 is merged
+      url = "github:nix-community/disko/6747342da148f6cb28c8405a70fe00455a0ba027";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -68,6 +70,37 @@
             }
             disko.nixosModules.disko
             ./machines/nixos/galago.nix
+          ];
+        };
+
+        /*
+          When testing out in an VM, `$ nixos-rebuild build-vm --flake
+          .#router` won't work, since it builds the stock
+          `system.build.vm`, which boots an empty overlay root and
+          ignores the disko layout entirely (no bcachefs partitions,
+          no swap, and no mounted subvolumes).  It also fails pure
+          evaluation, because importing
+          `../../systems/nixos/commons.nix` pulls in the emacs-overlay
+          `fetchTarball` without a pinned `sha256`.  Instead, build a
+          VM backed by a real disko image, which boots the actual
+          bcachefs/swap layout:
+          `$ nix build .#nixosConfigurations.router.config.system.build.vmWithDisko --impure`
+        */
+        router = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            nix-flatpak.nixosModules.nix-flatpak
+            nixos-facter-modules.nixosModules.facter
+            {
+              config.facter.reportPath =
+                if builtins.pathExists ./machines/nixos/facter/router.json then
+                  ./machines/nixos/facter/router.json
+                else
+                  throw "Have you forgotten to run nixos-anywhere with `--generate-hardware-config nixos-facter ./facter.json`?";
+            }
+            disko.nixosModules.disko
+            ./machines/nixos/router.nix
           ];
         };
 

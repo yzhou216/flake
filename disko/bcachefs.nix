@@ -4,6 +4,12 @@
     disk.disk1 = {
       device = lib.mkDefault "/dev/nvme0n1";
       type = "disk";
+      /*
+        `imageSize` is only used by the disko image builder
+        (e.g. `vmWithDisko`); real hardware ignores this and sizes the
+        disk from whatever device it lands on.
+      */
+      imageSize = "40G";
       content = {
         type = "gpt";
         partitions = {
