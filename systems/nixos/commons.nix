@@ -92,6 +92,11 @@
     })
   ];
 
+  virtualisation.podman = {
+    enable = true;
+    dockerSocket.enable = true;
+  };
+
   services = {
     automatic-timezoned.enable = true;
 
@@ -166,6 +171,7 @@
       "wheel"
       "video"
       "networkmanager"
+      "podman"
     ];
 
     # mkpasswd -m sha-512 <the_most_secure_password>
