@@ -167,6 +167,9 @@
       "video"
       "networkmanager"
     ];
+
+    # mkpasswd -m sha-512 <the_most_secure_password>
+    hashedPassword = "$6$yM8t/1VCAl66Y7XD$dmvt7Xq6iGLU3uJ9lcpUvr/7PZxt7IzYsoZbm4s42pejndU4IAMW4YbP4JcQK5KxI5DzSwLjPFCYY/OETznnO1";
   };
 
   environment.systemPackages = with pkgs; [
