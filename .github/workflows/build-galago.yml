@@ -1,0 +1,34 @@
+on:
+  schedule:
+    - cron: "0 */1 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: wimpysworld/nothing-but-nix@main
+      - uses: DeterminateSystems/nix-installer-action@main
+        with:
+          extra-conf: |
+            build-dir = /nix/build
+      - uses: cachix/cachix-action@master
+        with:
+          name: yzhou216
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - name: Update flake.lock
+        run: nix flake update
+
+      # Same target as `nixos-rebuild switch --flake . --impure`;
+      # `--impure` is needed because the Emacs overlay uses a bare
+      # `builtins.fetchTarball`.
+      # `--keep-going` builds the rest if one package fails, and
+      # cachix's daemon pushes each successful path as it builds.
+      - name: Build galago
+        run: |
+          nix build \
+            --impure \
+            --keep-going \
+            --no-link \
+            ".#nixosConfigurations.galago.config.system.build.toplevel"
