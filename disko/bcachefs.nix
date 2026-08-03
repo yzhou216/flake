@@ -81,6 +81,11 @@
           "noatime"
           "discard"
         ];
+
+        "@home/yiyu/.snapshots".mountOptions = [
+          "noatime"
+          "discard"
+        ];
       };
     };
   };

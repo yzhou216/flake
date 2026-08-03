@@ -98,6 +98,14 @@
   };
 
   services = {
+    snapper.configs.home = {
+      SUBVOLUME = "/home/yiyu";
+      FSTYPE = "bcachefs";
+      ALLOW_USERS = [ "yiyu" ];
+      TIMELINE_CREATE = true;
+      TIMELINE_CLEANUP = true;
+    };
+
     automatic-timezoned.enable = true;
 
     pipewire.alsa = {
