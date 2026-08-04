@@ -131,6 +131,7 @@
       enable = true;
       useRoutingFeatures = "both";
       extraUpFlags = [ "--ssh" ];
+      extraSetFlags = [ "--operator=yiyu" ];
     };
 
     keyd = {
