@@ -132,9 +132,9 @@
       useRoutingFeatures = "both";
       extraUpFlags = [
         "--exit-node-allow-lan-access=true"
+        "--operator=yiyu"
         "--ssh"
       ];
-      extraSetFlags = [ "--operator=yiyu" ];
     };
 
     keyd = {
