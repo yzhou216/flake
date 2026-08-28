@@ -30,7 +30,7 @@ in
       completion.enable = true;
     }
     // (
-      if stdenv.isLinux then
+      if stdenv.hostPlatform.isLinux then
         { promptInit = bashPrompt; }
       else if stdenv.isDarwin then
         { interactiveShellInit = bashPrompt; }

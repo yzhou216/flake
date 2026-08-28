@@ -13,5 +13,5 @@ in
     info.enable = true;
     doc.enable = true;
   }
-  // (if stdenv.isLinux then { dev.enable = true; } else { });
+  // (if stdenv.hostPlatform.isLinux then { dev.enable = true; } else { });
 }
