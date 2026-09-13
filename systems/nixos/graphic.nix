@@ -7,10 +7,15 @@
     digital
     musescore
     libreoffice
+    prismlauncher
+    opencode
+    t3code
     lutris
+    anki
 
     nyxt
     tor-browser
+    brave-origin
     mpv
     fragments
     signal-desktop
@@ -24,10 +29,12 @@
   ];
 
   programs = {
-    river = {
+    kwm = {
       enable = true;
+      withUWSM = true;
       extraPackages = with pkgs; [
         alacritty-graphics
+        kwim
         pamixer
         kanshi
         yambar
@@ -56,6 +63,8 @@
     kdeconnect.enable = true;
     steam.enable = true;
   };
+
+  xdg.portal.wlr.settings.screencast.chooser_type = "none";
 
   services = {
     emacs.package = pkgs.emacs-git;
