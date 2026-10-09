@@ -130,7 +130,7 @@
     tailscale = {
       enable = true;
       useRoutingFeatures = "both";
-      extraUpFlags = [
+      extraSetFlags = [
         "--exit-node-allow-lan-access=true"
         "--operator=yiyu"
         "--ssh"
