@@ -67,9 +67,61 @@
       mac-app-util,
       ...
     }@inputs:
+    let
+      /*
+        Nixpkgs master with commits from open pull requests applied on
+        top.  Each commit is pinned so that pushes to a pull request do
+        not invalidate the hashes.  Evaluating a system from the
+        patched tree imports from a derivation, so the patched source
+        is built before evaluation.
+
+        TODO: remove the patches of each pull request once it is
+        merged, and go back to `nixpkgs.lib.nixosSystem` once none are
+        left.
+      */
+      nixpkgs-patched =
+        let
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          fetchPrCommit =
+            pr: rev: hash:
+            pkgs.fetchpatch {
+              url = "https://github.com/NixOS/nixpkgs/pull/${toString pr}/commits/${rev}.patch";
+              inherit hash;
+            };
+        in
+        pkgs.applyPatches {
+          name = "nixpkgs-patched";
+          src = nixpkgs;
+          patches = [
+            # https://github.com/NixOS/nixpkgs/pull/550395
+            # nixos/river: init
+            (fetchPrCommit 550395 "e0158f7c4876e3a5785a8f6f9582220c72a2d3ca" "sha256-u51R02kTwqGfBAn30xt//qpSlkAxIJ06/1etKsNNpv4=")
+            # kwm: init at 0.3.0
+            (fetchPrCommit 550395 "c08b9ab09a451370fecb4c9fb066524f5c302b34" "sha256-jGFJ/ukFauntI2RRosyA3JVFQvhj5ARErDlYtIBEk9U=")
+            # nixos/kwm: init
+            (fetchPrCommit 550395 "95213484d31f167321bcf01af375f77c57fa538b" "sha256-WC4SVSAivKi8SX4L6dFsq0n5BAgnJjuPnAQrLwsrB6g=")
+            # kwim: init at 0.2.0
+            (fetchPrCommit 550395 "a6846d48060dd112964e2ee55935692f8838bf5e" "sha256-sfZC7jThRQhnaBwBw/dw2EQXUzP3YwKDS6tzV2YVC44=")
+          ];
+        };
+
+      # Same as `nixpkgs.lib.nixosSystem`, but from the patched tree
+      nixosSystem-patched =
+        args:
+        import "${nixpkgs-patched}/nixos/lib/eval-config.nix" (
+          {
+            lib = import "${nixpkgs-patched}/lib";
+            system = null;
+          }
+          // args
+          // {
+            modules = args.modules ++ [ { config.nixpkgs.flake.source = nixpkgs-patched.outPath; } ];
+          }
+        );
+    in
     {
       nixosConfigurations = {
-        galago = nixpkgs.lib.nixosSystem {
+        galago = nixosSystem-patched {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
