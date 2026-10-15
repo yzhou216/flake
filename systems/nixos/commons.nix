@@ -16,6 +16,21 @@
   # Bootloader
   boot = {
     kernelPackages = pkgs.linuxPackages_testing;
+
+    # Give back the halted TD on a disconnected root port, fixing the
+    # HHKB hang after a replug into a laptop port on 7.3-rc
+    # TODO: remove once the patch is merged upstream
+    kernelPatches = [
+      {
+        name = "xhci-give-back-halted-td-on-disconnect";
+        # https://lore.kernel.org/linux-usb/20261013073825.17962-1-yiyu@yiyuzhou.io/
+        patch = pkgs.fetchpatch {
+          url = "https://github.com/yzhou216/linux/commit/fa96503d2513b31a69c26b128c3d85ccbb027e3d.patch";
+          hash = "sha256-OS89ibgsNWPf1f0gYEUe22715I34vJPKKiZR6ywCcs4=";
+        };
+      }
+    ];
+
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
