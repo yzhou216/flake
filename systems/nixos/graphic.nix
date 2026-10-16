@@ -54,6 +54,7 @@
     firefox = {
       enable = true;
       package = pkgs.librewolf;
+      nativeMessagingHosts.packages = [ pkgs.ff2mpv-rust ];
     };
 
     thunderbird.enable = true;
