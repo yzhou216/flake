@@ -83,5 +83,6 @@
 
     # LLMs
     opencode
+    claude-code
   ];
 }
