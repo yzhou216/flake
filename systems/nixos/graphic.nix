@@ -31,10 +31,12 @@
   ];
 
   programs = {
-    river = {
+    kwm = {
       enable = true;
+      withUWSM = true;
       extraPackages = with pkgs; [
         alacritty-graphics
+        kwim
         pamixer
         kanshi
         yambar
