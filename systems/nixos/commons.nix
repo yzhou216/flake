@@ -158,6 +158,14 @@
       ];
     };
 
+    # Web GUI for LLM programming agents, reachable over the network
+    t3code = {
+      enable = true;
+      user = "yiyu";
+      host = "0.0.0.0";
+      openFirewall = true;
+    };
+
     keyd = {
       enable = true;
       keyboards.default = {
