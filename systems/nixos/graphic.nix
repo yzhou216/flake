@@ -7,6 +7,7 @@
     digital
     musescore
     libreoffice
+    prismlauncher
     lutris
 
     nyxt
