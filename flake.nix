@@ -105,6 +105,12 @@
             (fetchPrCommit 550395 "95213484d31f167321bcf01af375f77c57fa538b" "sha256-WC4SVSAivKi8SX4L6dFsq0n5BAgnJjuPnAQrLwsrB6g=")
             # kwim: init at 0.2.0
             (fetchPrCommit 550395 "a6846d48060dd112964e2ee55935692f8838bf5e" "sha256-sfZC7jThRQhnaBwBw/dw2EQXUzP3YwKDS6tzV2YVC44=")
+
+            # https://github.com/NixOS/nixpkgs/pull/566470
+            # maintainers: add jakob1379
+            (fetchPrCommit 566470 "094265f353ac97584592b65fdcade927cd628c4e" "sha256-Y+QRgmLs6ooXo0N0YGWhRVaHP5pqK6zf5bNMbi7k9Xg=")
+            # nixos/t3code: init
+            (fetchPrCommit 566470 "c73e1fccfdf1e52182d9693b645587e3f4c27310" "sha256-C8WLiZVYUaPYhH7bKRYriy0+FpT9MWYiCeAmDUKeSz0=")
           ];
         };
 
@@ -155,7 +161,7 @@
           bcachefs/swap layout:
           `$ nix build .#nixosConfigurations.router.config.system.build.vmWithDisko --impure`
         */
-        router = nixpkgs.lib.nixosSystem {
+        router = nixosSystem-patched {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
