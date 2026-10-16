@@ -80,5 +80,8 @@
     nixfmt
     devenv
     nix-init
+
+    # LLMs
+    opencode
   ];
 }
