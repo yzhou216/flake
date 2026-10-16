@@ -19,6 +19,10 @@
     signal-desktop
     gurk-rs
 
+    # Android
+    android-tools
+    scrcpy
+
     # Theming
     adwaita-icon-theme
     gnome-themes-extra
