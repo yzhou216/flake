@@ -181,7 +181,13 @@
   security = {
     # Use sudo-rs and doas instead of sudo
     sudo.enable = false;
-    sudo-rs.enable = true;
+    sudo-rs = {
+      enable = true;
+      extraConfig = ''
+        Defaults !pwfeedback
+      '';
+    };
+
     doas = {
       enable = true;
       extraRules = [
