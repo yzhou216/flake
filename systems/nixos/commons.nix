@@ -166,6 +166,14 @@
       openFirewall = true;
     };
 
+    # BitTorrent daemon with an HTTP API and web UI on localhost:3030
+    rqbit = {
+      enable = true;
+      user = "yiyu";
+      group = "users";
+      downloadDir = "/home/yiyu/Downloads";
+    };
+
     keyd = {
       enable = true;
       keyboards.default = {
@@ -176,6 +184,13 @@
         };
       };
     };
+  };
+
+  # Download directory of rqbit, which must exist before it starts
+  systemd.tmpfiles.settings."10-rqbit"."/home/yiyu/Downloads".d = {
+    user = "yiyu";
+    group = "users";
+    mode = "0755";
   };
 
   hardware = {

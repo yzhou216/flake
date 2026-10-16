@@ -15,7 +15,6 @@
     tor-browser
     brave-origin
     mpv
-    fragments
     signal-desktop
     gurk-rs
 
