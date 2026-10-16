@@ -14,7 +14,7 @@
         "nix-command"
       ];
       accept-flake-config = true;
-      nix-path = "nixpkgs=flake:nixpkgs";
+      nix-path = [ "nixpkgs=flake:nixpkgs" ];
       use-xdg-base-directories = true;
       auto-optimise-store = true;
       trusted-users = [
