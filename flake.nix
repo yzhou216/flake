@@ -27,6 +27,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    openwrt-imagebuilder.url = "github:astro/nix-openwrt-imagebuilder";
+
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -59,6 +61,7 @@
       nix-flatpak,
       nixos-facter-modules,
       disko,
+      openwrt-imagebuilder,
       darwin,
       nix-homebrew,
       homebrew-bundle,
@@ -251,6 +254,35 @@
       # nix build .#bcachefs-iso
       packages.x86_64-linux.bcachefs-iso =
         self.nixosConfigurations.bcachefs-iso.config.system.build.isoImage;
+
+      # nix build .#openwrt
+      packages.x86_64-linux.openwrt =
+        let
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          profiles = openwrt-imagebuilder.lib.profiles { inherit pkgs; };
+          config = profiles.identifyProfile "avm_fritz7412" // {
+            # Packages to include in the image instead of installing them later
+            packages = [ "tcpdump" ];
+
+            disabledServices = [ "dnsmasq" ];
+
+            /*
+              Files to include in the image.  UCI configuration is set
+              with a uci-defaults script, as the OpenWrt Image Builder
+              documentation recommends.
+            */
+            files = pkgs.runCommand "image-files" { } ''
+              mkdir -p $out/etc/uci-defaults
+              cat > $out/etc/uci-defaults/99-custom <<EOF
+              uci -q batch << EOI
+              set system.@system[0].hostname='testap'
+              commit
+              EOI
+              EOF
+            '';
+          };
+        in
+        openwrt-imagebuilder.lib.build config;
 
       darwinConfigurations = {
         iris = darwin.lib.darwinSystem {
