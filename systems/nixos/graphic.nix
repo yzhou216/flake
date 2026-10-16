@@ -78,5 +78,8 @@
       uninstallUnmanaged = true;
       packages = [ ];
     };
+
+    # Grant uaccess to MTP devices, which systemd only does for adb
+    udev.packages = [ pkgs.libmtp ];
   };
 }
