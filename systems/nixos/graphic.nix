@@ -67,6 +67,8 @@
     steam.enable = true;
   };
 
+  xdg.portal.wlr.settings.screencast.chooser_type = "none";
+
   services = {
     emacs.package = pkgs.emacs-git;
     wlock.enable = true;
