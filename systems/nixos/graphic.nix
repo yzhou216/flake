@@ -9,6 +9,7 @@
     libreoffice
     prismlauncher
     lutris
+    anki
 
     nyxt
     tor-browser
