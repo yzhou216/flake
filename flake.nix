@@ -88,7 +88,7 @@
           fetchPrCommit =
             pr: rev: hash:
             pkgs.fetchpatch {
-              url = "https://github.com/NixOS/nixpkgs/pull/${toString pr}/commits/${rev}.patch";
+              url = "https://github.com/NixOS/nixpkgs/commit/${rev}.patch";
               inherit hash;
             };
         in
