@@ -8,7 +8,7 @@
     jujutsu
 
     # Forge clients
-    codeberg-cli
+    forgejo-cli
     glab # GitLab CLI
     gh # GitHub CLI
   ];
