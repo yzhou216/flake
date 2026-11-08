@@ -13,7 +13,6 @@
 
     nyxt
     tor-browser
-    brave-origin
     mpv
     signal-desktop
     gurk-rs
