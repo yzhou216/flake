@@ -5,7 +5,7 @@
 {
   environment.systemPackages = with pkgs; [
     # syntax highlighting (for less)
-    sourceHighlight
+    source-highlight
 
     # source code tagging
     universal-ctags
